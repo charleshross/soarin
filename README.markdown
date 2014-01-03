@@ -59,7 +59,7 @@ Use a server clause similar to this one, replace <> items with your server infor
 			}
 		}
 		
-		# remove when out of production
+		# remove when in 'production'
 		location /frontend {
 			alias <path to soarin folder>/frontend;
 		}
