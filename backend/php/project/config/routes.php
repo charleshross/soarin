@@ -3,5 +3,5 @@
 // Index
 $router->addRoute(array(
 'path'     => '/',
-'get'		=> array('Soarin_Soarin', 'read'),
+'get'		=> array('Controllers_Soarin_Soarin', 'read'),
 ));

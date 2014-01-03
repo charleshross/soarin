@@ -21,15 +21,15 @@ function soarin_autoloader($input_classname) {
 		return;
 	}
 	
-	// Project controllers
-	$project_controllers = PATH_PROJECT . '/controllers/' . str_replace('_', '/', $input_classname) . '.php';
+	// Project
+	$project_controllers = PATH_PROJECT . '/' . str_replace('_', '/', $input_classname) . '.php';
 	
 	if (file_exists($project_controllers)) {
 		require_once ($project_controllers);
 		return;
 	}
 	
-	// Soarin classes
+	// Soarin library classes
 	$soarin_classes = PATH_SOARIN . '/classes/' . str_replace('_', '/', $input_classname) . '.php';
 	
 	if (file_exists($soarin_classes)) {

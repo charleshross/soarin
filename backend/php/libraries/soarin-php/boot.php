@@ -9,8 +9,8 @@ define('PATH_FRONTEND',$base_path.'/frontend');
 define('PATH_PUBLIC',$base_path.'/public');
 define('PATH_PROJECT',PATH_PHP.'/project');
 define('PATH_SOARIN',PATH_PHP.'/libraries/soarin-php');
-define('PATH_MODELS',PATH_PROJECT.'/models');
-define('PATH_VIEWS',PATH_PROJECT.'/views');
+define('PATH_MODELS',PATH_PROJECT.'/Models');
+define('PATH_VIEWS',PATH_PROJECT.'/Views');
 
 // Autoloader
 include(PATH_SOARIN.'/router/autoloader.php');
