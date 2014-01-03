@@ -1,0 +1,72 @@
+{
+	"jquery": {
+		"description": "jQuery library",
+		"autoload": {
+			"development": true,
+			"production": true
+		},
+		"js": ["\/libraries\/jquery\/jquery-1.10.2.js"]
+	},
+	"jquery-ui": {
+		"description": "jQuery-UI library",
+		"autoload": {
+			"development": true,
+			"production": true
+		},
+		"js": ["\/libraries\/jquery-ui\/jquery-ui-1.10.2.js"],
+		"css": ["\/libraries\/jquery-ui\/css\/redmond\/jquery-ui-1.10.3.custom.css"],
+		"files": ["\/libraries\/jquery-ui\/css\/redmond\/images"]
+	},
+	"jquery-migrate": {
+		"description": "jQuery-Migrate",
+		"autoload": {
+			"development": true,
+			"production": true
+		},
+		"js": ["\/libraries\/jquery-migrate\/jquery-migrate.js"]
+	},
+	"less": {
+		"description": "LESS library",
+		"autoload": {
+			"development": true,
+			"production": false
+		},
+		"js": ["\/libraries\/less\/less-1.5.1.js"]
+	},
+	"bootstrap": {
+		"description": "Bootstrap library",
+		"autoload": {
+			"development": true,
+			"production": true
+		},
+		"js": ["\/libraries\/bootstrap\/js\/bootstrap.js"],
+		"css": ["\/libraries\/bootstrap\/css\/bootstrap.css", "\/libraries\/bootstrap\/css\/bootstrap-theme.css", "\/libraries\/bootstrap\/css\/bootstrap.production.fix.css"],
+		"files": ["\/libraries\/bootstrap\/fonts"]
+	},
+	"mercury": {
+		"description": "Mercury library",
+		"autoload": {
+			"development": true,
+			"production": true
+		},
+		"js": ["\/libraries\/mercury\/javascripts\/mercury.js"]
+	},
+	"jwplayer": {
+		"description": "jwplayer library",
+		"autoload": {
+			"development": true,
+			"production": true
+		},
+		"js": ["\/libraries\/jwplayer\/jwplayer.js"],
+		"css": ["\/libraries\/jwplayer\/"],
+		"files": ["\/libraries\/jwplayer\/jwplayer.flash.swf"]
+	},
+	"socket.io": {
+		"description": "socket.io library",
+		"autoload": {
+			"development": false,
+			"production": false
+		},
+		"js": ["\/libraries\/socket.io\/socket.io.js"]
+	}
+}

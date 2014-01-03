@@ -1,0 +1,12 @@
+{
+	"name": "Soarin_Web_Framework",
+	"version": "0.0.1",
+	"description": "Soarin Web Framework",
+	"libraries": {
+		"jquery": "default",
+		"bootstrap": "default",
+		"less": "default"
+	},
+	"author": "Charles Ross",
+	"license": "MIT License"
+}
