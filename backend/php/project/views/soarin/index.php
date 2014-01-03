@@ -28,10 +28,10 @@ $head -> output();
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Welcome</a></li>
-            <li><a href="http://www.github.com" target='_blank'>GitHub</a></li>
+            <li><a href="https://github.com/charleshross/soarin" target='_blank'>GitHub Page</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-          	<p class="navbar-text">Created by: Charles Ross (<a href="mailto:charleshross@gmail.com">charleshross@gmail.com</a>)</p>
+          	<p class="navbar-text">Created by: <a href="https://github.com/charleshross" target='_blank'>Charles Ross</a></p>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -45,7 +45,7 @@ $head -> output();
         <p>PHP as fast as possible...</p>
         <p>Thanks for using the Soarin framework!</p>
         <p>
-          <a class="btn btn-lg btn-primary" href="http://www.github.com" target='_blank' role="button">View documentation &raquo;</a>
+          <a class="btn btn-lg btn-primary" href="https://github.com/charleshross/soarin#readme" target='_blank' role="button">View README &raquo;</a>
         </p>
       </div>
 
