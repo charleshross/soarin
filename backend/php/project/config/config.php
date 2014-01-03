@@ -12,4 +12,7 @@ class config {
 	// Force URL's to be lowercase
 	const force_lower_case = TRUE;
 	
+	// Unique Project Name
+	const project_name = 'Soarin-PHP';
+	
 }
