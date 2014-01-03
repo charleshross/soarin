@@ -29,9 +29,9 @@ class config {
 	const pdo_sql_driver = 'mysql';
 	
 	/**
-	 * SQL Hostname to Database
+	 * SQL Hostname to Database (Ex: localhost)
 	 */
-	const db_hostname = '';
+	const db_hostname = 'localhost';
 	
 	/**
 	 * SQL Database
@@ -47,5 +47,21 @@ class config {
 	 * SQL Database Password
 	 */
 	const db_password = '';
+	
+	/**
+	 * Error logging reports
+	 * 
+	 * 0 = PRODUCTION (log no errors)
+	 * 1 = FATAL only
+	 * 2 = ERROR & FATAL
+	 * 3 = WARN & ERROR & FATAL
+	 * 4 = NOTICE & WARN & ERROR & FATAL
+	 */
+	const log_error_level = 4;
+	
+	/**
+	 * Timezone for error log timestamp to be displayed in
+	 */
+	const error_timezone = 'UTC';
 	
 }
