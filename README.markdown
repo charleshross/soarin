@@ -64,6 +64,12 @@ Use a server clause similar to this one, replace <> items with your server infor
 			alias <path to soarin folder>/frontend;
 		}
 		
+		# remove when in 'production'
+		location ~ \.(jpg|jpeg|png|gif|swf|ico|txt|html|htm)$ {
+		    root /;
+		    try_files <path to soarin folder>/frontend/$uri <path to soarin folder>/public/$uri /;
+		}
+		
 		location ~ \.flv$ {
 			flv;
 		}
