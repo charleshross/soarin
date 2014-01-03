@@ -23,7 +23,7 @@ $head -> output();
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <div class="navbar-brand">Soarin-PHP</div>
+          <div class="navbar-brand"><?php echo $site_name; ?></div>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
