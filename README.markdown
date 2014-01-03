@@ -7,6 +7,13 @@ Introduction
 
 This software is a super light weight RESTful framework for your future PHP code base. Every attempt has been made to make it as fast as possible (espsecially if you include all the below extensions properly and set config::session_handler to equal 'redis').
 
+Installation
+-----------------------------
+
+1. [Setup Web Server](https://github.com/charleshross/soarin/wiki/Setup-web-server)
+2. Setup Soarin
+3. Configure Soarin
+
 PHP Framework Dependencies
 -----------------------------
 
