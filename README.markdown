@@ -5,7 +5,7 @@ PHP as fast as possible
 Introduction
 -----------------------------
 
-This software is a super light weight RESTful framework for your future PHP code base. Every attempt has been made to make it as fast as possible (espsecially if you include all the below extensions properly).
+This software is a super lightweight RESTful framework for your future PHP code base. Every attempt has been made to make it as fast as possible (especially if you include all the below extensions properly).
 
 Installation
 -----------------------------
