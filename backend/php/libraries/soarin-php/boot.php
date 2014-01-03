@@ -18,6 +18,9 @@ include(PATH_SOARIN.'/router/autoloader.php');
 // Config
 require_once (PATH_PROJECT . '/config/config.php');
 
+// Fetch sessions
+session_start();
+
 // URL filter
 include (PATH_SOARIN.'/router/url.php');
 
