@@ -66,20 +66,6 @@ class HTML_Head {
 
 			}
 
-			// Maser LESS fiLE
-			if (is_file(PATH_FRONTEND . '/' . $frontend_folder . '/less/index.less')) {
-
-				$less[] = '/' . $frontend_folder . '/less/index.less';
-
-			}
-
-			// Maser CSS fiLE
-			if (is_file(PATH_FRONTEND . '/' . $frontend_folder . '/css/index.css')) {
-
-				$less[] = '/' . $frontend_folder . '/css/index.css';
-
-			}
-
 		} else if (config::env == 'PRODUCTION') {
 
 			// library css
