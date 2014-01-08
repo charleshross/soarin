@@ -4,9 +4,9 @@ $head = new HTML_Head('soarin');
 
 $head -> title('Soarin PHP Framework');
 
-$head -> icon('soarin.png');
+$head -> icon('/styles/images/soarin.png');
 
-$head -> less('master.less');
+$head -> less('/styles/less/master.less');
 
 $head -> output();
 ?>
