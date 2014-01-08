@@ -1,0 +1,229 @@
+<?php
+
+class HTML_Head {
+	
+	// info
+	public $title = null;
+	public $icon = array();
+	
+	// scripts
+	public $js = array();
+	public $css = array();
+	public $less = array();
+
+	public function __construct() {
+
+		// Libraries JSON
+		$libs_file = file_get_contents(PATH_STYLES . '/libraries/libraries.json');
+		$libs = json_decode($libs_file, true);
+
+		// Frontend libraries selected
+		$frontend_libs_file = file_get_contents(PATH_STYLES . '/' . '/autoload.json');
+		$frontend_libs = json_decode($frontend_libs_file, true);
+
+		$this -> load_libs($libs, $frontend_libs);
+
+	}
+
+	public function load_libs($libs, $frontend_libs) {
+
+		$js = $this -> js;
+		$css = $this -> css;
+		$less = $this -> less;
+
+		if (config::env == 'DEVELOPMENT') {
+
+			// JSON library load
+			foreach ($frontend_libs['libraries'] as $key => $value) {
+
+				if ($libs[$key]) {
+
+					//print_r ($libs[$key]);
+
+					if ($libs[$key]['autoload']['development'] == 1) {
+
+						if (!empty($libs[$key]['js'])) {
+							$js = array_merge($js, $libs[$key]['js']);
+						}
+
+						if (!empty($libs[$key]['css'])) {
+							$css = array_merge($css, $libs[$key]['css']);
+						}
+
+					}
+
+				}
+
+			}
+
+		} else if (config::env == 'PRODUCTION') {
+
+			// library css
+			if (IS_FILE(PATH_PUBLIC . '/' . $frontend_folder . '/libraries/libraries.css')) {
+				$css[] = '/'.$frontend_folder.'/libraries/libraries.css';
+			}
+
+			// library js
+			if (IS_FILE(PATH_PUBLIC . '/' . $frontend_folder . '/libraries/libraries.js')) {
+				$js[] = '/'.$frontend_folder.'/libraries/libraries.js';
+			}
+
+		}
+
+		$this -> js = $js;
+		$this -> css = $css;
+		$this -> less = $less;
+
+	}
+
+	public function title($title) {
+
+		$this -> title = $title;
+
+	}
+
+	public function js($js) {
+
+		$this -> js[] = '/js/' . $js;
+
+	}
+
+	public function less($less) {
+		
+		if (config::env == 'DEVELOPMENT') {
+		
+			$this -> less[] = '/less/' . $less;
+		
+		}
+		
+		else if (config::env == 'PRODUCTION') {
+			
+			$this -> less[] = '/css/' . $less . '.css';
+			
+		}
+	}
+	
+	public function css($css) {
+
+		$this -> css[] = '/css/' . $css;
+
+	}
+
+	public function load_less() {
+
+		$less = $this -> less;
+
+		foreach ($less as $key => $value) {
+
+			if (config::env == 'DEVELOPMENT') {
+
+				$value = '/styles' . $value;
+				
+				echo "<link rel='stylesheet/less' type='text/css' href='" . $value . "'> \n";
+				
+			} else if (config::env == 'PRODUCTION') {
+				
+				echo "<link rel='stylesheet' type='text/css' href='" . $value . "'> \n";
+				
+			}
+
+			
+
+		}
+
+	}
+
+	public function load_css() {
+
+		$css = $this -> css;
+
+		foreach ($css as $key => $value) {
+
+			echo "<link rel='stylesheet' type='text/css' href='" . $value . "'> \n";
+
+		}
+
+	}
+
+	public function load_js() {
+
+		$js = $this -> js;
+
+		foreach ($js as $key => $value) {
+
+			echo "<script src='" . $value . "'></script> \n";
+
+		}
+
+	}
+	
+	public function icon($icon) {
+		
+		$this -> icon[] = '/images/' . $icon;
+		
+	}
+	
+	public function load_favicon() {
+		
+		$icon = $this->icon;
+		
+		if (!empty($icon)) {
+			
+			$extension = pathinfo($icon[0], PATHINFO_EXTENSION);
+			
+			if (config::env == 'DEVELOPMENT') {
+
+				$value = '/styles' . $icon[0];
+				
+				echo "<link rel='icon' type='image/{$extension}' href='{$value}' /> \n";
+
+			} else if (config::env == 'PRODUCTION') {
+				
+				$value = $icon[0];
+				
+				echo "<link rel='icon' type='image/{$extension}' href='{$value}' /> \n";
+				
+			}
+			
+		}
+		
+	}
+	
+	public function output() {
+
+		$title = $this -> title;
+
+		// HTML5 Doctype
+		echo "<!DOCTYPE html> \n";
+
+		// HTML tag
+		echo "<html> \n";
+
+		// Head tag start
+		echo "<head> \n";
+
+		// Title
+		if ($title) {
+
+			echo "<title>{$title}</title> \n";
+
+		}
+		
+		// Favicon
+		$this -> load_favicon();
+		
+		// CSS
+		$this -> load_css();
+
+		// LESS
+		$this -> load_less();
+
+		// JS
+		$this -> load_js();
+
+		// Head tag end
+		echo "</head> \n";
+
+	}
+
+}

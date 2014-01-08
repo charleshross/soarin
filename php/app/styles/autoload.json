@@ -1,0 +1,7 @@
+{
+	"libraries": {
+		"jquery": "default",
+		"bootstrap": "default",
+		"less": "default"
+	}
+}

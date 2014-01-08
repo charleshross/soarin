@@ -1,4 +1,4 @@
 <?php
 
 // Load Soarin
-include('../backend/php/libraries/soarin-php/boot.php');
+include('../php/libraries/soarin/boot.php');

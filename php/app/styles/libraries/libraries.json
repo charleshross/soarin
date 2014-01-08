@@ -1,0 +1,72 @@
+{
+	"jquery": {
+		"description": "jQuery library",
+		"autoload": {
+			"development": true,
+			"production": true
+		},
+		"js": ["\/styles\/libraries\/jquery\/jquery-1.10.2.js"]
+	},
+	"jquery-ui": {
+		"description": "jQuery-UI library",
+		"autoload": {
+			"development": true,
+			"production": true
+		},
+		"js": ["\/styles\/libraries\/jquery-ui\/jquery-ui-1.10.2.js"],
+		"css": ["\/styles\/libraries\/jquery-ui\/css\/redmond\/jquery-ui-1.10.3.custom.css"],
+		"files": ["\/styles\/libraries\/jquery-ui\/css\/redmond\/images"]
+	},
+	"jquery-migrate": {
+		"description": "jQuery-Migrate",
+		"autoload": {
+			"development": true,
+			"production": true
+		},
+		"js": ["\/styles\/libraries\/jquery-migrate\/jquery-migrate.js"]
+	},
+	"less": {
+		"description": "LESS library",
+		"autoload": {
+			"development": true,
+			"production": false
+		},
+		"js": ["\/styles\/libraries\/less\/less-1.5.1.js"]
+	},
+	"bootstrap": {
+		"description": "Bootstrap library",
+		"autoload": {
+			"development": true,
+			"production": true
+		},
+		"js": ["\/styles\/libraries\/bootstrap\/js\/bootstrap.js"],
+		"css": ["\/styles\/libraries\/bootstrap\/css\/bootstrap.css", "\/styles\/libraries\/bootstrap\/css\/bootstrap-theme.css", "\/styles\/libraries\/bootstrap\/css\/bootstrap.production.fix.css"],
+		"files": ["\/styles\/libraries\/bootstrap\/fonts"]
+	},
+	"mercury": {
+		"description": "Mercury library",
+		"autoload": {
+			"development": true,
+			"production": true
+		},
+		"js": ["\/styles\/libraries\/mercury\/javascripts\/mercury.js"]
+	},
+	"jwplayer": {
+		"description": "jwplayer library",
+		"autoload": {
+			"development": true,
+			"production": true
+		},
+		"js": ["\/styles\/libraries\/jwplayer\/jwplayer.js"],
+		"css": ["\/styles\/libraries\/jwplayer\/"],
+		"files": ["\/styles\/libraries\/jwplayer\/jwplayer.flash.swf"]
+	},
+	"socket.io": {
+		"description": "socket.io library",
+		"autoload": {
+			"development": false,
+			"production": false
+		},
+		"js": ["\/styles\/libraries\/socket.io\/socket.io.js"]
+	}
+}
