@@ -35,13 +35,19 @@ Optional framework PHP extras:
 NGINXG Server Clause Setup
 -----------------------------
 Use a server clause similar to this one, replace <> items with your server information
-
+	
 	server {
 
 		listen <port number here>;
 		server_name localhost:<port number here>;
 		
-		root <path to soarin folder>;
+		root <path to soarin folder>/public;
+	    
+		# remove when in 'production'
+		location ~ \.(jpg|jpeg|png|apng|gif|swf|ico|txt|html|htm|js|css|less)$ {
+			root /;
+			try_files <path to soarin folder>/php/app/$uri <path to soarin folder>/public/$uri 404.html;
+		}
 		
 		location / {
 			index index.php;
@@ -57,17 +63,6 @@ Use a server clause similar to this one, replace <> items with your server infor
 			if (-f $request_filename) {
 				fastcgi_pass 127.0.0.1:9000;
 			}
-		}
-		
-		# remove when in 'production'
-		location /frontend {
-			alias <path to soarin folder>/frontend;
-		}
-		
-		# remove when in 'production'
-		location ~ \.(jpg|jpeg|png|gif|swf|ico|txt|html|htm)$ {
-		    root /;
-		    try_files <path to soarin folder>/frontend/$uri <path to soarin folder>/public/$uri /;
 		}
 		
 		location ~ \.flv$ {
