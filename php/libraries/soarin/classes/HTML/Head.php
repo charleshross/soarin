@@ -1,53 +1,92 @@
 <?php
 
 class HTML_Head {
-	
-	// info
+
+	// meta
 	public $title = null;
 	public $icon = array();
-	
-	// scripts
+
+	// styles
 	public $js = array();
 	public $css = array();
 	public $less = array();
 
-	public function __construct() {
+	public function __construct($autoload = true) {
 
-		// Libraries JSON
-		$libs_file = file_get_contents(PATH_STYLES . '/libraries/libraries.json');
-		$libs = json_decode($libs_file, true);
-
-		// Frontend libraries selected
-		$frontend_libs_file = file_get_contents(PATH_STYLES . '/' . '/autoload.json');
-		$frontend_libs = json_decode($frontend_libs_file, true);
-
-		$this -> load_libs($libs, $frontend_libs);
+		// Autoload libraries
+		if ($autoload == true) {
+			$this -> autoload_libraries();
+		}
 
 	}
 
-	public function load_libs($libs, $frontend_libs) {
+	// Autoload libraries
+	public function autoload_libraries() {
 
-		$js = $this -> js;
-		$css = $this -> css;
-		$less = $this -> less;
-
+		// DEVELOPMENT autoload
 		if (config::env == 'DEVELOPMENT') {
 
-			// JSON library load
-			foreach ($frontend_libs['libraries'] as $key => $value) {
+			// JSON file locations
+			$json_autoload = PATH_STYLES . '/autoload.json';
+			$json_libraries = PATH_STYLES . '/libraries/libraries.json';
 
-				if ($libs[$key]) {
+			// Autoload JSON Check
+			if (!is_file($json_autoload)) {
 
-					//print_r ($libs[$key]);
+				echo "Error: '/styles/autoload.json' file missing, halting.";
+				exit ;
 
-					if ($libs[$key]['autoload']['development'] == 1) {
+			}
 
-						if (!empty($libs[$key]['js'])) {
-							$js = array_merge($js, $libs[$key]['js']);
-						}
+			// Libraries JSON Check
+			if (!is_file($json_libraries)) {
 
-						if (!empty($libs[$key]['css'])) {
-							$css = array_merge($css, $libs[$key]['css']);
+				echo "Error: '/styles/libraries/libraries.json' file missing, halting.";
+				exit ;
+
+			}
+
+			// Decoding JSON
+			$json_autoload = json_decode(file_get_contents($json_autoload), true);
+			$json_libraries = json_decode(file_get_contents($json_libraries), true);
+
+			// autoload.json
+			if (!empty($json_autoload['libraries'])) {
+
+				// loop autoload.json
+				foreach ($json_autoload['libraries'] as $key => $value) {
+
+					// default?
+					if ($value == 'default') {
+
+						// library selected
+						$library = $json_libraries[$key];
+
+						// autoload for development?
+						if ($library['autoload']['development'] == 1) {
+
+							// CSS
+							if (!empty($library['css'])) {
+
+								foreach ($library['css'] as $key => $value) {
+
+									$this -> css[$value] = $value;
+
+								}
+
+							}
+
+							// JS
+							if (!empty($library['js'])) {
+
+								foreach ($library['js'] as $key => $value) {
+
+									$this -> js[$value] = $value;
+
+								}
+
+							}
+
 						}
 
 					}
@@ -56,142 +95,168 @@ class HTML_Head {
 
 			}
 
-		} else if (config::env == 'PRODUCTION') {
+		}
 
-			// library css
-			if (IS_FILE(PATH_PUBLIC . '/' . $frontend_folder . '/libraries/libraries.css')) {
-				$css[] = '/'.$frontend_folder.'/libraries/libraries.css';
-			}
+		// PRODUCTION autoload
+		else if (config::env == 'PRODUCTION') {
 
-			// library js
-			if (IS_FILE(PATH_PUBLIC . '/' . $frontend_folder . '/libraries/libraries.js')) {
-				$js[] = '/'.$frontend_folder.'/libraries/libraries.js';
-			}
+			$this -> css['/styles/libraries/libraries.css'] = '/styles/libraries/libraries.css';
+			$this -> js['/styles/libraries/libraries.js'] = '/styles/libraries/libraries.js';
 
 		}
 
-		$this -> js = $js;
-		$this -> css = $css;
-		$this -> less = $less;
-
 	}
 
+	// Inserting
 	public function title($title) {
 
 		$this -> title = $title;
 
 	}
 
-	public function js($js) {
+	public function icon($path) {
 
-		$this -> js[] = '/js/' . $js;
+		$this -> icon = $path;
 
 	}
 
-	public function less($less) {
-		
-		if (config::env == 'DEVELOPMENT') {
-		
-			$this -> less[] = '/less/' . $less;
-		
+	public function css($path) {
+
+		$this -> css[$path] = $path;
+
+	}
+
+	public function less($path) {
+
+		$this -> less[$path] = $path;
+
+	}
+
+	public function js($path) {
+
+		$this -> js[$path] = $path;
+
+	}
+
+	public function file_check($path) {
+
+		if (!is_file(PATH_APP . $path)) {
+
+			echo "Error: Failure autoloading library files, '" . PATH_APP . $path . "' does not exist, halting.";
+			exit ;
+
 		}
-		
-		else if (config::env == 'PRODUCTION') {
-			
-			$this -> less[] = '/css/' . $less . '.css';
-			
+
+	}
+
+	// Rendering
+	public function render_title() {
+
+		$title = $this -> title;
+
+		if (!empty($title)) {
+
+			echo "<title>{$title}</title> \n";
+
 		}
-	}
-	
-	public function css($css) {
-
-		$this -> css[] = '/css/' . $css;
 
 	}
 
-	public function load_less() {
+	public function render_favicon() {
 
-		$less = $this -> less;
+		$icon = $this -> icon;
 
-		foreach ($less as $key => $value) {
+		if (!empty($icon)) {
 
 			if (config::env == 'DEVELOPMENT') {
 
-				$value = '/styles' . $value;
-				
-				echo "<link rel='stylesheet/less' type='text/css' href='" . $value . "'> \n";
-				
-			} else if (config::env == 'PRODUCTION') {
-				
-				echo "<link rel='stylesheet' type='text/css' href='" . $value . "'> \n";
-				
+				$this -> file_check($icon);
+
 			}
 
-			
+			$extension = pathinfo($icon[0], PATHINFO_EXTENSION);
+
+			echo "<link rel='icon' type='image/{$extension}' href='{$icon}' /> \n";
 
 		}
 
 	}
 
-	public function load_css() {
+	public function render_css() {
 
 		$css = $this -> css;
 
-		foreach ($css as $key => $value) {
+		if (!empty($css)) {
 
-			echo "<link rel='stylesheet' type='text/css' href='" . $value . "'> \n";
+			foreach ($css as $key => $value) {
+
+				if (config::env == 'DEVELOPMENT') {
+
+					$this -> file_check($value);
+
+				}
+
+				echo "<link rel='stylesheet' type='text/css' href='" . $value . "'> \n";
+
+			}
 
 		}
 
 	}
 
-	public function load_js() {
+	public function render_less() {
+
+		$less = $this -> less;
+
+		if (!empty($less)) {
+
+			foreach ($less as $key => $value) {
+
+				if (config::env == 'DEVELOPMENT') {
+
+					$this -> file_check($value);
+
+					echo "<link rel='stylesheet/less' type='text/css' href='" . $value . "'> \n";
+
+				}
+
+				if (config::env == 'PRODUCTION') {
+
+					$value .= '.css';
+
+					echo "<link rel='stylesheet' type='text/css' href='" . $value . "'> \n";
+
+				}
+
+			}
+
+		}
+
+	}
+
+	public function render_js() {
 
 		$js = $this -> js;
 
-		foreach ($js as $key => $value) {
+		if (!empty($js)) {
 
-			echo "<script src='" . $value . "'></script> \n";
+			foreach ($js as $key => $value) {
 
-		}
+				if (config::env == 'DEVELOPMENT') {
 
-	}
-	
-	public function icon($icon) {
-		
-		$this -> icon[] = '/images/' . $icon;
-		
-	}
-	
-	public function load_favicon() {
-		
-		$icon = $this->icon;
-		
-		if (!empty($icon)) {
-			
-			$extension = pathinfo($icon[0], PATHINFO_EXTENSION);
-			
-			if (config::env == 'DEVELOPMENT') {
+					$this -> file_check($value);
 
-				$value = '/styles' . $icon[0];
-				
-				echo "<link rel='icon' type='image/{$extension}' href='{$value}' /> \n";
+				}
 
-			} else if (config::env == 'PRODUCTION') {
-				
-				$value = $icon[0];
-				
-				echo "<link rel='icon' type='image/{$extension}' href='{$value}' /> \n";
-				
+				echo "<script src='" . $value . "'></script> \n";
+
 			}
-			
-		}
-		
-	}
-	
-	public function output() {
 
-		$title = $this -> title;
+		}
+
+	}
+
+	public function output() {
 
 		// HTML5 Doctype
 		echo "<!DOCTYPE html> \n";
@@ -203,23 +268,19 @@ class HTML_Head {
 		echo "<head> \n";
 
 		// Title
-		if ($title) {
+		$this -> render_title();
 
-			echo "<title>{$title}</title> \n";
-
-		}
-		
 		// Favicon
-		$this -> load_favicon();
-		
+		$this -> render_favicon();
+
 		// CSS
-		$this -> load_css();
+		$this -> render_css();
 
 		// LESS
-		$this -> load_less();
+		$this -> render_less();
 
 		// JS
-		$this -> load_js();
+		$this -> render_js();
 
 		// Head tag end
 		echo "</head> \n";
