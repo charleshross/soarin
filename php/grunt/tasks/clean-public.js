@@ -28,7 +28,7 @@ module.exports = function(grunt) {
 			},
 
 			// delete all public files/folders except index.php
-			clean : ['../../public/**/*', '!../../public/index.php']
+			clean : ['../../public/**/*', ['!../../public/index.php','!../../public/404.html']]
 
 		};
 
