@@ -23,7 +23,7 @@ Required:
 * [NGINX v1.5.7+](http://nginx.org/)
 * [Node.js v0.10.24+](http://www.nodejs.org) with [Grunt v0.4.2+](http://gruntjs.com/)
 
-Full Features:
+Optional (gives full features):
 
 * [Redis v2.8.3+](http://redis.io/) with [phpredis PHP Extension](https://github.com/nicolasff/phpredis)
 * [Zend OPcache PHP extension](http://us2.php.net/opcache)
