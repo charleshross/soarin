@@ -122,3 +122,49 @@ Grunt is included with scripts to auto-compile/minify your project's /php/styles
 3. Move into framework's Grunt folder `<framework path>/php/grunt/`
 4. Install the Grunt dependencies, run command `npm install`
 5. Run Soarin Grunt script by typing `grunt`
+
+Framework folder structure
+-----------------------------
+ |-php
+   |---app
+   |-----config
+   |-----controllers
+   |-------Soarin
+   |-----logs
+   |-----models
+   |-----styles
+   |-------css
+   |-------images
+   |-------js
+   |-------less
+   |---------assets
+   |-------libraries
+   |---------bootstrap
+   |-----------css
+   |-----------fonts
+   |-----------js
+   |---------jquery
+   |---------jquery-migrate
+   |---------jquery-ui
+   |-----------css
+   |-------------redmond
+   |---------------images
+   |---------jwplayer
+   |---------less
+   |---------mercury
+   |-----------javascripts
+   |-----------stylesheets
+   |---------socket.io
+   |-----views
+   |-------Soarin
+   |---grunt
+   |-----tasks
+   |---libraries
+   |-----soarin
+   |-------classes
+   |---------HTML
+   |---------SQL
+   |-------router
+   |---------zaphpa
+   |-----------plugins
+   |-public
