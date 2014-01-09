@@ -131,19 +131,19 @@ Directory structure of Soarin
 .
 ├── <b> php </b>
 │   │   
-│   ├── <b> app </b>  your application folder
+│   ├── <b> app </b>                    your application folder
 │   │   │   
-│   │   ├── <b> config </b>  soarin config folder
+│   │   ├── <b> config </b>             soarin config folder
 │   │   │   │   
-│   │   │   ├── <b> config.php </b>  config variables files
-│   │   │   ├── <b> errors.php </b>  error codes handling files
-│   │   │   └── <b> routes.php </b>  router config files
+│   │   │   ├── <b> config.php </b>     config variables files
+│   │   │   ├── <b> errors.php </b>     error codes handling files
+│   │   │   └── <b> routes.php </b>     router config files
 │   │   │   
-│   │   ├── <b> controllers </b>  controller classes folder
+│   │   ├── <b> controllers </b>        controller classes folder
 │   │   │   
-│   │   ├── <b> logs </b>  log files folder
+│   │   ├── <b> logs </b>               log files folder
 │   │   │   
-│   │   ├── <b> models </b>  models classes folder
+│   │   ├── <b> models </b>             models classes folder
 │   │   │   
 │   │   ├── <b> styles </b>
 │   │   │   │
@@ -154,17 +154,17 @@ Directory structure of Soarin
 │   │   │   ├── <b> less </b>           LESS file folder
 │   │   │   └── <b> libraries </b>      JS Libraries folder
 │   │   │   
-│   │   └── <b> views </b>  views files folder
+│   │   └── <b> views </b>              views files folder
 │   │   
-│   ├── <b> grunt </b>  grunt script folder (code optimizer)
+│   ├── <b> grunt </b>                  grunt script folder (code optimizer)
 │   │   
-│   └── <b> libraries </b>  php libraries folder
+│   └── <b> libraries </b>              php libraries folder
 │       │  
-│       └── <b> soarin </b>  the soarin framework folder (internals)
+│       └── <b> soarin </b>             the soarin framework folder (internals)
 │   
-└── <b> public </b>  public web folder
+└── <b> public </b>                     public web folder
     │  
-    ├── <b> 404.html </b>  404 file
-    └── <b> index.php </b>  entry point file
+    ├── <b> 404.html </b>               404 file
+    └── <b> index.php </b>              entry point file
 
 </pre>
