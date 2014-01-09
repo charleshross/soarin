@@ -27,9 +27,11 @@ Optional (gives full features):
 
 * [Redis v2.8.3+](http://redis.io/) with [phpredis PHP Extension](https://github.com/nicolasff/phpredis)
 * [Zend OPcache PHP extension](http://us2.php.net/opcache)
-* [GD PHP extension](http://php.net/manual/en/book.image.php)
+* [PHP GD extension](http://php.net/manual/en/book.image.php)
 * [PHP PDO extension with pdo-mysql and pdo-pgsql](http://www.php.net/manual/en/book.pdo.php)
-* [cURL PHP extension](http://php.net/manual/en/book.curl.php)
+* [PHP cURL extension](http://php.net/manual/en/book.curl.php)
+* [MySQL v5.6.15+](http://dev.mysql.com/downloads/mysql/)
+* [PostgreSQL v9.3+](http://www.postgresql.org/)
 
 NGINXG Server Clause Setup
 -----------------------------
