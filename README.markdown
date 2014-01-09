@@ -129,42 +129,42 @@ Directory structure of Soarin
 
 <pre>
 .
-├── <b>php</b>
+├── <b> php </b>
 │   │   
-│   ├── app  (your application)
+│   ├── <b> app </b>  (your application)
 │   │   │   
-│   │   ├── config  (soarin config)
+│   │   ├── <b> config </b>  (soarin config)
 │   │   │   │   
-│   │   │   ├── config.php  (config variables)
-│   │   │   ├── errors.php  (error codes handling)
-│   │   │   └── routes.php  (router config)
+│   │   │   ├── <b> config.php </b>  (config variables)
+│   │   │   ├── <b> errors.php </b>  (error codes handling)
+│   │   │   └── <b> routes.php </b>  (router config)
 │   │   │   
-│   │   ├── controllers  (your app's controller classes go here)
+│   │   ├── <b> controllers </b>  (your app's controller classes go here)
 │   │   │   
-│   │   ├── logs  (log files)
+│   │   ├── <b> logs </b>  (log files)
 │   │   │   
-│   │   ├── models  (your app's model classes go here)
+│   │   ├── <b> models </b>  (your app's model classes go here)
 │   │   │   
-│   │   ├── styles
+│   │   ├── <b> styles </b>
 │   │   │   │
-│   │   │   ├── autoload.json  (files to autoload from 'styles/libraries' folder)
-│   │   │   ├── css  (your app's CSS files)
-│   │   │   ├── images  (your app's image files)
-│   │   │   ├── js  (your app's JavaScript files)
-│   │   │   ├── less  (your app's LESS files)
-│   │   │   └── libraries  (JS libraries)
+│   │   │   ├── <b> autoload.json </b>  (files to autoload from 'styles/libraries' folder)
+│   │   │   ├── <b> css </b>  (your app's CSS files)
+│   │   │   ├── <b> images </b>  (your app's image files)
+│   │   │   ├── <b> js </b>  (your app's JavaScript files)
+│   │   │   ├── <b> less </b>  (your app's LESS files)
+│   │   │   └── <b> libraries </b>  (JS libraries)
 │   │   │   
-│   │   └── views  (your app's view files go here)
+│   │   └── <b> views </b>  (your app's view files go here)
 │   │   
-│   ├── grunt  (grunt script folder for auto-minification)
+│   ├── <b> grunt </b>  (grunt script folder for auto-minification)
 │   │   
-│   └── libraries  (php libraries folder)
+│   └── <b> libraries </b>  (php libraries folder)
 │       │  
-│       └── soarin  (the soarin framework internal files)
+│       └── <b> soarin </b>  (the soarin framework internal files)
 │   
-└── public  (public web folder)
+└── <b> public </b>  (public web folder)
     │  
-    ├── 404.html  (404 file)
-    └── index.php  (entry point file)
+    ├── <b> 404.html </b>  (404 file)
+    └── <b> index.php </b>  (entry point file)
 
 </pre>
