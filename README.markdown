@@ -127,7 +127,7 @@ Framework folder structure
 -----------------------------
 Directory structure of Soarin
 
-<pre>
+<pre style='font-size:20px;'>
 .
 ├── php
 │   │   
