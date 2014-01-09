@@ -148,11 +148,11 @@ Directory structure of Soarin
 │   │   ├── <b> styles </b>
 │   │   │   │
 │   │   │   ├── <b> autoload.json </b>  library autoload config file
-│   │   │   ├── <b> css </b>  			CSS file folder
-│   │   │   ├── <b> images </b>  		static file folder
-│   │   │   ├── <b> js </b>  			JS file folder
-│   │   │   ├── <b> less </b>  			LESS file folder
-│   │   │   └── <b> libraries </b>  	JS Libraries folder
+│   │   │   ├── <b> css </b>            CSS file folder
+│   │   │   ├── <b> images </b>         static file folder
+│   │   │   ├── <b> js </b>             JS file folder
+│   │   │   ├── <b> less </b>           LESS file folder
+│   │   │   └── <b> libraries </b>      JS Libraries folder
 │   │   │   
 │   │   └── <b> views </b>  views files folder
 │   │   
