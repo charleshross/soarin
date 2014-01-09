@@ -52,6 +52,7 @@ define('PATH_STYLES',PATH_APP.'/styles');
 
 // Sessions
 session_start();
+session_write_close();
  
 // Autoloader
 include(PATH_SOARIN.'/router/autoloader.php');
