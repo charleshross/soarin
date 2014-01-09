@@ -127,7 +127,7 @@ Framework folder structure
 -----------------------------
 Directory structure of Soarin
 
-```
+<pre>
 .
 ├── php
 │   │   
@@ -167,4 +167,4 @@ Directory structure of Soarin
     ├── 404.html  (404 file)
     └── index.php  (entry point file)
 
-```
+</pre>
