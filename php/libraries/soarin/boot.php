@@ -4,14 +4,15 @@
  * Configuration
  * 
  * You can leave these blank if you are using the default directory structure.
+ * Providing the path here can save 10ms to load time.
  * 
  */
 
 // Application folder
-$application_folder = '';
+$application_folder = '/www/apptreach/php/app';
 
 // PHP Libraries folder
-$libraries_folder = '';
+$libraries_folder = '/www/apptreach/php/libraries';
 
 /**
  * Setting paths
@@ -49,6 +50,9 @@ define('PATH_STYLES',PATH_APP.'/styles');
  * 
  */
 
+// Sessions
+session_start();
+ 
 // Autoloader
 include(PATH_SOARIN.'/router/autoloader.php');
 
