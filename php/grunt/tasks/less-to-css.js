@@ -17,36 +17,49 @@ module.exports = function(grunt) {
 		grunt.log.debug('Description: ' + task_description);
 
 		// loop through less files
-		grunt.file.expand({
-			filter : 'isFile'
-		}, ['../app/styles/**/*.less', '!../app/styles/libraries/**']).forEach(function(dir) {
+		grunt.file.expand(['../app/styles/*', '!../app/styles/libraries/**']).forEach(function(dir) {
 
-			// fetch task's config object
-			var less = grunt.config.get('less') || {
-				options : {
-					cleancss : true
-				}
-			};
+			var is_folder = grunt.file.isDir(dir);
 
-			// destination file
-			var dest = dir.replace("../app", "../../public") + '.css';
+			if (!is_folder) {
+				return;
+			}
+			
+			dir = dir + '/*.less';
+			
+			// loop through less files
+			grunt.file.expand({
+				filter : 'isFile'
+			}, dir).forEach(function(dir) {
 
-			// add to config object
-			less['less_' + dir] = {
+				// fetch task's config object
+				var less = grunt.config.get('less') || {
+					options : {
+						cleancss : true
+					}
+				};
 
-				// input files
-				src : dir,
+				// destination file
+				var dest = dir.replace("../app", "../../public") + '.css';
 
-				// output files
-				dest : dest,
+				// add to config object
+				less['less_' + dir] = {
 
-				// files only
-				filter : 'isFile',
+					// input files
+					src : dir,
 
-			};
+					// output files
+					dest : dest,
 
-			// save new config to object
-			grunt.config.set('less', less);
+					// files only
+					filter : 'isFile',
+
+				};
+
+				// save new config to object
+				grunt.config.set('less', less);
+
+			});
 
 		});
 
