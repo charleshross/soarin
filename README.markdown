@@ -129,21 +129,21 @@ Directory structure of Soarin
 
 <pre>
 .
-├── <b> php </b>
+├── <b> php </b>                        parent folder
 │   │   
 │   ├── <b> app </b>                    your application folder
 │   │   │   
-│   │   ├── <b> config </b>             soarin config folder
+│   │   ├── <b> config </b>             application config folder
 │   │   │   │   
-│   │   │   ├── <b> config.php </b>     config variables files
-│   │   │   ├── <b> errors.php </b>     error codes handling files
-│   │   │   └── <b> routes.php </b>     router config files
+│   │   │   ├── <b> config.php </b>     Soarin config variables files
+│   │   │   ├── <b> errors.php </b>     Error code handling file
+│   │   │   └── <b> routes.php </b>     Router configuration file
 │   │   │   
-│   │   ├── <b> controllers </b>        controller classes folder
+│   │   ├── <b> controllers </b>        Controllers folder
 │   │   │   
 │   │   ├── <b> logs </b>               log files folder
 │   │   │   
-│   │   ├── <b> models </b>             models classes folder
+│   │   ├── <b> models </b>             Models folder
 │   │   │   
 │   │   ├── <b> styles </b>
 │   │   │   │
@@ -154,7 +154,7 @@ Directory structure of Soarin
 │   │   │   ├── <b> less </b>           LESS file folder
 │   │   │   └── <b> libraries </b>      JS Libraries folder
 │   │   │   
-│   │   └── <b> views </b>              views files folder
+│   │   └── <b> views </b>              View folder
 │   │   
 │   ├── <b> grunt </b>                  grunt script folder (code optimizer)
 │   │   
