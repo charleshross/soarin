@@ -129,7 +129,7 @@ Directory structure of Soarin
 
 <pre>
 .
-├── <b> php </b>                          parent folder
+├── <b> php </b>                          parent folder for internal files
 │   │   
 │   ├── <b> app </b>                      your application folder                        PATH_APP
 │   │   │   
@@ -162,7 +162,7 @@ Directory structure of Soarin
 │       │  
 │       └── <b> soarin </b>               the soarin framework folder (internals)        PATH_SOARIN
 │   
-└── <b> public </b>                       public web folder
+└── <b> public </b>                       parent folder for public web files
     │  
     ├── <b> 404.html </b>                 404 file
     └── <b> index.php </b>                entry point file
