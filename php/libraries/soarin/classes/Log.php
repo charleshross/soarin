@@ -48,7 +48,7 @@ class Log {
 		$error_message = "[$time] " . $error_type[$level] . " ". $message . "\r\n";
 
 		// Log file path to write to
-		$log_filepath = PATH_APP . '/logs/' . $file_name;
+		$log_filepath = APP . '/logs/' . $file_name;
 		
 		// Error Level Reached?
 		if (config::log_error_level >= $level) {

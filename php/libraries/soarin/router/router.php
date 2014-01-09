@@ -7,7 +7,7 @@ include (__DIR__ . '/zaphpa/zaphpa.lib.php');
 $router = new Zaphpa_Router();
 
 // Project rules
-include (PATH_APP . '/config/routes.php');
+include (APP . '/config/routes.php');
 
 // Route attempt
 try {
@@ -19,6 +19,6 @@ try {
 // Route failed
 catch (Zaphpa_InvalidPathException $ex) {
 
-	include(PATH_APP . '/config/errors.php');
+	include(APP . '/config/errors.php');
 
 }

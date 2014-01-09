@@ -27,8 +27,8 @@ class HTML_Head {
 		if (config::env == 'DEVELOPMENT') {
 
 			// JSON file locations
-			$json_autoload = PATH_STYLES . '/autoload.json';
-			$json_libraries = PATH_STYLES . '/libraries/libraries.json';
+			$json_autoload = STYLES . '/autoload.json';
+			$json_libraries = STYLES . '/libraries/libraries.json';
 
 			// Autoload JSON Check
 			if (!is_file($json_autoload)) {
@@ -140,9 +140,9 @@ class HTML_Head {
 
 	public function file_check($path) {
 
-		if (!is_file(PATH_APP . $path)) {
+		if (!is_file(APP . $path)) {
 
-			echo "Error: Failure autoloading library files, '" . PATH_APP . $path . "' does not exist, halting.";
+			echo "Error: Failure autoloading library files, '" . APP . $path . "' does not exist, halting.";
 			exit ;
 
 		}

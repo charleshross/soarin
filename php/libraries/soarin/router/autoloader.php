@@ -22,7 +22,7 @@ function soarin_autoloader($input_classname) {
 	}
 	
 	// Application
-	$project_controllers = PATH_APP . '/' . str_replace('_', '/', $input_classname) . '.php';
+	$project_controllers = APP . '/' . str_replace('_', '/', $input_classname) . '.php';
 	
 	if (file_exists($project_controllers)) {
 		require_once ($project_controllers);
@@ -30,7 +30,7 @@ function soarin_autoloader($input_classname) {
 	}
 	
 	// Soarin library
-	$soarin_classes = PATH_SOARIN . '/classes/' . str_replace('_', '/', $input_classname) . '.php';
+	$soarin_classes = SOARIN . '/classes/' . str_replace('_', '/', $input_classname) . '.php';
 	
 	if (file_exists($soarin_classes)) {
 		require_once ($soarin_classes);
@@ -38,7 +38,7 @@ function soarin_autoloader($input_classname) {
 	}
 	
 	// PHP Libraries
-	$libraries_path = PATH_LIBRARIES . '/' . $input_classname . '.php';
+	$libraries_path = LIBRARIES . '/' . $input_classname . '.php';
 	
 	if (file_exists($libraries_path)) {
 		require_once ($libraries_path);
