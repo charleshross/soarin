@@ -128,43 +128,42 @@ Framework folder structure
 Directory structure of Soarin
 
 <p>
-. <br>
-├── php <br>
-│   │    <br>
-│   ├── app <br>
-│   │   │    <br>
-│   │   ├── config <br>
-│   │   │   │    <br>
-│   │   │   ├── config.php
-│   │   │   ├── errors.php
-│   │   │   └── routes.php
-│   │   │   
-│   │   ├── controllers
-│   │   │   
-│   │   ├── logs
-│   │   │   
-│   │   ├── models
-│   │   │   
-│   │   ├── styles
-│   │   │   │
-│   │   │   ├── autoload.json
-│   │   │   ├── css
-│   │   │   ├── images
-│   │   │   ├── js
-│   │   │   ├── less
-│   │   │   └── libraries
-│   │   │   
-│   │   └── views
-│   │   
-│   ├── grunt
-│   │   
-│   └── libraries
-│       │  
-│       └── soarin
-│   
-└── public
-    │  
-    ├── 404.html
-    └── index.php
-
+. 							<br>
+├── php 					<br>
+│ │  						<br>
+│ ├── app 					<br>
+│ │ │    					<br>
+│ │ ├── config 				<br>
+│ │ │ │    					<br>
+│ │ │ ├── config.php    	<br>
+│ │ │ ├── errors.php    	<br>
+│ │ │ └── routes.php    	<br>
+│ │ │       				<br>
+│ │ ├── controllers    		<br>
+│ │ │       				<br>
+│ │ ├── logs    			<br>
+│ │ │       				<br>
+│ │ ├── models    			<br>
+│ │ │       				<br>
+│ │ ├── styles    			<br>
+│ │ │ │    					<br>
+│ │ │ ├── autoload.json    	<br>
+│ │ │ ├── css    			<br>
+│ │ │ ├── images    		<br>
+│ │ │ ├── js    			<br>
+│ │ │ ├── less    			<br>
+│ │ │ └── libraries    		<br>
+│ │ │       				<br>
+│ │ └── views    			<br>
+│ │       					<br>
+│ ├── grunt    				<br>
+│ │       					<br>
+│ └── libraries    			<br>
+│     │      				<br>
+│     └── soarin    		<br>
+│     						<br>
+└── public    				<br>
+    │      					<br>
+    ├── 404.html    		<br>
+    └── index.php    		<br>
 </p>
