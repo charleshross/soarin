@@ -43,7 +43,7 @@ Use a server clause similar to this one, replace <items like this> with your ser
 		root <path to soarin folder>/public;
 	    
 		# remove when in 'production'
-		location ~ \.(jpg|jpeg|png|apng|gif|swf|ico|txt|html|htm|js|css|less)$ {
+		location ~ \.(jpg|jpeg|png|apng|gif|swf|ico|txt|html|htm|js|css|less|eot|svg|ttf|woff)$ {
 			root /;
 			try_files <path to soarin folder>/php/app/$uri <path to soarin folder>/public/$uri 404.html;
 		}
