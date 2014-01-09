@@ -26,7 +26,7 @@ Required:
 Optional (gives full features):
 
 * [Redis v2.8.3+](http://redis.io/) with [phpredis PHP Extension](https://github.com/nicolasff/phpredis)
-* [Zend OPcache PHP extension](http://us2.php.net/opcache)
+* [PHP Zend OPcache extension](http://us2.php.net/opcache)
 * [PHP GD extension](http://php.net/manual/en/book.image.php)
 * [PHP PDO extension with pdo-mysql and pdo-pgsql](http://www.php.net/manual/en/book.pdo.php)
 * [PHP cURL extension](http://php.net/manual/en/book.curl.php)
