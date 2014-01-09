@@ -1,6 +1,6 @@
 <?php
 
-$head = new HTML_Head('soarin');
+$head = new HTML_Head();
 
 $head -> title('Soarin PHP Framework');
 
