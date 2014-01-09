@@ -131,7 +131,7 @@ Directory structure of Soarin
 .
 ├── <b> php </b>                          parent folder for internal files
 │   │   
-│   ├── <b> app </b>                      your application folder                        PATH_APP
+│   ├── <b> app </b>                      your application folder                        APP
 │   │   │   
 │   │   ├── <b> config </b>               application config folder
 │   │   │   │   
@@ -143,9 +143,9 @@ Directory structure of Soarin
 │   │   │   
 │   │   ├── <b> logs </b>                 log files folder
 │   │   │   
-│   │   ├── <b> models </b>               Models folder                                  PATH_MODELS
+│   │   ├── <b> models </b>               Models folder                                  MODELS
 │   │   │   
-│   │   ├── <b> styles </b>               Frontend styles folder                         PATH_STYLES
+│   │   ├── <b> styles </b>               Frontend styles folder                         STYLES
 │   │   │   │
 │   │   │   ├── <b> autoload.json </b>    library autoload config file
 │   │   │   ├── <b> css </b>              CSS file folder
@@ -158,9 +158,9 @@ Directory structure of Soarin
 │   │   
 │   ├── <b> grunt </b>                    grunt script folder (code optimizer)
 │   │   
-│   └── <b> libraries </b>                php libraries folder                           PATH_LIBRARIES
+│   └── <b> libraries </b>                php libraries folder                           LIBRARIES
 │       │  
-│       └── <b> soarin </b>               the soarin framework folder (internals)        PATH_SOARIN
+│       └── <b> soarin </b>               the soarin framework folder (internals)        SOARIN
 │   
 └── <b> public </b>                       parent folder for public web files
     │  
