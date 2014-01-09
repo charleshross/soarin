@@ -128,124 +128,42 @@ Framework folder structure
 Directory structure of Soarin
 ```
 .
-├── php
+├── php **php base folder**
+│   │   
 │   ├── app
+│   │   │   
 │   │   ├── config
+│   │   │   │   
 │   │   │   ├── config.php
 │   │   │   ├── errors.php
 │   │   │   └── routes.php
+│   │   │   
 │   │   ├── controllers
-│   │   │   └── Soarin
-│   │   │       └── Index.php
+│   │   │   
 │   │   ├── logs
-│   │   │   ├── errors.log
-│   │   │   └── sql.log
+│   │   │   
 │   │   ├── models
+│   │   │   
 │   │   ├── styles
+│   │   │   │
 │   │   │   ├── autoload.json
 │   │   │   ├── css
 │   │   │   ├── images
-│   │   │   │   └── soarin.png
 │   │   │   ├── js
 │   │   │   ├── less
-│   │   │   │   ├── assets
-│   │   │   │   │   └── bootstrap.less
-│   │   │   │   └── master.less
 │   │   │   └── libraries
-│   │   │       ├── bootstrap
-│   │   │       │   ├── css
-│   │   │       │   │   ├── bootstrap.css
-│   │   │       │   │   ├── bootstrap.production.fix.css
-│   │   │       │   │   └── bootstrap-theme.css
-│   │   │       │   ├── fonts
-│   │   │       │   │   ├── glyphicons-halflings-regular.eot
-│   │   │       │   │   ├── glyphicons-halflings-regular.svg
-│   │   │       │   │   ├── glyphicons-halflings-regular.ttf
-│   │   │       │   │   └── glyphicons-halflings-regular.woff
-│   │   │       │   └── js
-│   │   │       │       └── bootstrap.js
-│   │   │       ├── jquery
-│   │   │       │   └── jquery-1.10.2.js
-│   │   │       ├── jquery-migrate
-│   │   │       │   └── jquery-migrate.js
-│   │   │       ├── jquery-ui
-│   │   │       │   ├── css
-│   │   │       │   │   └── redmond
-│   │   │       │   │       ├── images
-│   │   │       │   │       │   ├── animated-overlay.gif
-│   │   │       │   │       │   ├── ui-bg_flat_0_aaaaaa_40x100.png
-│   │   │       │   │       │   ├── ui-bg_flat_55_fbec88_40x100.png
-│   │   │       │   │       │   ├── ui-bg_glass_75_d0e5f5_1x400.png
-│   │   │       │   │       │   ├── ui-bg_glass_85_dfeffc_1x400.png
-│   │   │       │   │       │   ├── ui-bg_glass_95_fef1ec_1x400.png
-│   │   │       │   │       │   ├── ui-bg_gloss-wave_55_5c9ccc_500x100.png
-│   │   │       │   │       │   ├── ui-bg_inset-hard_100_f5f8f9_1x100.png
-│   │   │       │   │       │   ├── ui-bg_inset-hard_100_fcfdfd_1x100.png
-│   │   │       │   │       │   ├── ui-icons_217bc0_256x240.png
-│   │   │       │   │       │   ├── ui-icons_2e83ff_256x240.png
-│   │   │       │   │       │   ├── ui-icons_469bdd_256x240.png
-│   │   │       │   │       │   ├── ui-icons_6da8d5_256x240.png
-│   │   │       │   │       │   ├── ui-icons_cd0a0a_256x240.png
-│   │   │       │   │       │   ├── ui-icons_d8e7f3_256x240.png
-│   │   │       │   │       │   └── ui-icons_f9bd01_256x240.png
-│   │   │       │   │       └── jquery-ui-1.10.3.custom.css
-│   │   │       │   └── jquery-ui-1.10.2.js
-│   │   │       ├── jwplayer
-│   │   │       │   ├── jwplayer.flash.swf
-│   │   │       │   ├── jwplayer.html5.js
-│   │   │       │   ├── jwplayer.js
-│   │   │       │   └── README.html
-│   │   │       ├── less
-│   │   │       │   └── less-1.5.1.js
-│   │   │       ├── libraries.json
-│   │   │       ├── mercury
-│   │   │       │   ├── javascripts
-│   │   │       │   │   ├── jquery-1.7.js
-│   │   │       │   │   ├── mercury_dialogs.js
-│   │   │       │   │   ├── mercury.js
-│   │   │       │   │   ├── mercury_loader.js
-│   │   │       │   │   └── mercury.min.js
-│   │   │       │   ├── mercury-icons.psd
-│   │   │       │   └── stylesheets
-│   │   │       │       ├── mercury.bundle.css
-│   │   │       │       └── mercury.css
-│   │   │       └── socket.io
-│   │   │           └── socket.io.js
+│   │   │   
 │   │   └── views
-│   │       └── Soarin
-│   │           └── Index.php
+│   │   
 │   ├── grunt
-│   │   ├── Gruntfile.js
-│   │   ├── package.json
-│   │   └── tasks
-│   │       ├── clean-public.js
-│   │       ├── css.js
-│   │       ├── images.js
-│   │       ├── js.js
-│   │       ├── less-to-css.js
-│   │       └── libraries.js
+│   │   
 │   └── libraries
+│       │  
 │       └── soarin
-│           ├── boot.php
-│           ├── classes
-│           │   ├── HTML
-│           │   │   └── Head.php
-│           │   ├── Log.php
-│           │   ├── SQL
-│           │   │   └── PDO.php
-│           │   └── SQL.php
-│           └── router
-│               ├── autoloader.php
-│               ├── router.php
-│               ├── url.php
-│               └── zaphpa
-│                   ├── plugins
-│                   │   ├── MethodOverride.class.php
-│                   │   ├── ZaphpaAutoDocumentator.class.php
-│                   │   └── ZaphpaCORS.class.php
-│                   └── zaphpa.lib.php
-├── public
-│   ├── 404.html
-│   └── index.php
-└── README.markdown
+│   
+└── public
+    │  
+    ├── 404.html
+    └── index.php
+
 ```
