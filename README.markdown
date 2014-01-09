@@ -10,9 +10,9 @@ This software is a super lightweight RESTful framework for your future PHP code 
 Installation
 -----------------------------
 
-1. Setup a server
+1. Setup a server (coming soon)
 2. [Setup web software](https://github.com/charleshross/soarin/wiki/Setup-web-server)
-3. Setup Soarin
+3. Setup Soarin (coming soon)
 
 PHP Framework Dependencies
 -----------------------------
@@ -113,13 +113,12 @@ Required Debian packages: libxml2-dev libcurl4-gnutls-dev libpng12-0 libpng12-de
 
 Note: to enable opcache you must add "zend_extension=opcache.so" to your PHP.INI file
 
-Grunt Setup (optional)
+Grunt Setup (needed for full features)
 -----------------------------
-Grunt is included with scripts to auto-compile/minify your project's /frontend/ files
+Grunt is included with scripts to auto-compile/minify your project's /php/styles/ files (css/less/javascript/js libraries)
 
 1. Install node
-2. Install closure (make sure the /grunt/Gruntfile.js file points to closure jar path)
-2. Install global npm package by running command `npm install -g grunt-cli`
-3. Move into project's /grunt/ folder.
-4. Install the grunt dependencies, type `npm install`
-5. Run grunt script, type `grunt`
+2. Install Grunt global npm package by running command `npm install -g grunt-cli`
+3. Move into framework's Grunt folder `<framework path>/php/grunt/`
+4. Install the Grunt dependencies, run command `npm install`
+5. Run Soarin Grunt script by typing `grunt`
