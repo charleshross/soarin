@@ -126,9 +126,10 @@ Grunt is included with scripts to auto-compile/minify your project's /php/styles
 Framework folder structure
 -----------------------------
 Directory structure of Soarin
-```
+
+
 .
-├── php **php base folder**
+├── php
 │   │   
 │   ├── app
 │   │   │   
@@ -166,4 +167,4 @@ Directory structure of Soarin
     ├── 404.html
     └── index.php
 
-```
+
