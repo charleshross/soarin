@@ -10,8 +10,9 @@ This software is a super lightweight RESTful framework for your future PHP code 
 Installation
 -----------------------------
 
-1. [Setup Web Server](https://github.com/charleshross/soarin/wiki/Setup-web-server)
-2. Setup Soarin
+1. Setup a server
+2. [Setup web software](https://github.com/charleshross/soarin/wiki/Setup-web-server)
+3. Setup Soarin
 3. Configure Soarin
 
 PHP Framework Dependencies
