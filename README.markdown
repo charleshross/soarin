@@ -33,7 +33,7 @@ Optional (gives full features):
 
 NGINXG Server Clause Setup
 -----------------------------
-Use a server clause similar to this one, replace <> items with your server information
+Use a server clause similar to this one, replace <items like this> with your server information.
 	
 	server {
 
