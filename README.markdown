@@ -127,43 +127,44 @@ Framework folder structure
 -----------------------------
 Directory structure of Soarin
 
-<p>
-. 							<br>
-├── php 					<br>
-│ │  						<br>
-│ ├── app 					<br>
-│ │ │    					<br>
-│ │ ├── config 				<br>
-│ │ │ │    					<br>
-│ │ │ ├── config.php    	<br>
-│ │ │ ├── errors.php    	<br>
-│ │ │ └── routes.php    	<br>
-│ │ │       				<br>
-│ │ ├── controllers    		<br>
-│ │ │       				<br>
-│ │ ├── logs    			<br>
-│ │ │       				<br>
-│ │ ├── models    			<br>
-│ │ │       				<br>
-│ │ ├── styles    			<br>
-│ │ │ │    					<br>
-│ │ │ ├── autoload.json    	<br>
-│ │ │ ├── css    			<br>
-│ │ │ ├── images    		<br>
-│ │ │ ├── js    			<br>
-│ │ │ ├── less    			<br>
-│ │ │ └── libraries    		<br>
-│ │ │       				<br>
-│ │ └── views    			<br>
-│ │       					<br>
-│ ├── grunt    				<br>
-│ │       					<br>
-│ └── libraries    			<br>
-│     │      				<br>
-│     └── soarin    		<br>
-│     						<br>
-└── public    				<br>
-    │      					<br>
-    ├── 404.html    		<br>
-    └── index.php    		<br>
-</p>
+```
+.
+├── php
+│   │   
+│   ├── app  (your application)
+│   │   │   
+│   │   ├── config  (soarin config)
+│   │   │   │   
+│   │   │   ├── config.php  (config variables)
+│   │   │   ├── errors.php  (error codes handling)
+│   │   │   └── routes.php  (router config)
+│   │   │   
+│   │   ├── controllers  (your app's controller classes go here)
+│   │   │   
+│   │   ├── logs  (log files)
+│   │   │   
+│   │   ├── models  (your app's model classes go here)
+│   │   │   
+│   │   ├── styles
+│   │   │   │
+│   │   │   ├── autoload.json  (files to autoload from 'styles/libraries' folder)
+│   │   │   ├── css  (your app's CSS files)
+│   │   │   ├── images  (your app's image files)
+│   │   │   ├── js  (your app's JavaScript files)
+│   │   │   ├── less  (your app's LESS files)
+│   │   │   └── libraries  (JS libraries)
+│   │   │   
+│   │   └── views  (your app's view files go here)
+│   │   
+│   ├── grunt  (grunt script folder for auto-minification)
+│   │   
+│   └── libraries  (php libraries folder)
+│       │  
+│       └── soarin  (the soarin framework internal files)
+│   
+└── public  (public web folder)
+    │  
+    ├── 404.html  (404 file)
+    └── index.php  (entry point file)
+
+```
