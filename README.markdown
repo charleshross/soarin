@@ -129,42 +129,42 @@ Directory structure of Soarin
 
 <pre>
 .
-├── <b> php </b>                        parent folder
+├── <b> php </b>                          parent folder
 │   │   
-│   ├── <b> app </b>                    your application folder                        PATH_APP
+│   ├── <b> app </b>                      your application folder                        PATH_APP
 │   │   │   
-│   │   ├── <b> config </b>             application config folder
+│   │   ├── <b> config </b>               application config folder
 │   │   │   │   
-│   │   │   ├── <b> config.php </b>     Soarin config variables files
-│   │   │   ├── <b> errors.php </b>     Error code handling file
-│   │   │   └── <b> routes.php </b>     Router configuration file
+│   │   │   ├── <b> config.php </b>       Soarin config variables files
+│   │   │   ├── <b> errors.php </b>       Error code handling file
+│   │   │   └── <b> routes.php </b>       Router configuration file
 │   │   │   
-│   │   ├── <b> controllers </b>        Controllers folder
+│   │   ├── <b> controllers </b>          Controllers folder
 │   │   │   
-│   │   ├── <b> logs </b>               log files folder
+│   │   ├── <b> logs </b>                 log files folder
 │   │   │   
-│   │   ├── <b> models </b>             Models folder                                  PATH_MODELS
+│   │   ├── <b> models </b>               Models folder                                  PATH_MODELS
 │   │   │   
-│   │   ├── <b> styles </b>             Frontend styles folder                         PATH_STYLES
+│   │   ├── <b> styles </b>               Frontend styles folder                         PATH_STYLES
 │   │   │   │
-│   │   │   ├── <b> autoload.json </b>  library autoload config file
-│   │   │   ├── <b> css </b>            CSS file folder
-│   │   │   ├── <b> images </b>         static file folder
-│   │   │   ├── <b> js </b>             JS file folder
-│   │   │   ├── <b> less </b>           LESS file folder
-│   │   │   └── <b> libraries </b>      JS Libraries folder
+│   │   │   ├── <b> autoload.json </b>    library autoload config file
+│   │   │   ├── <b> css </b>              CSS file folder
+│   │   │   ├── <b> images </b>           static file folder
+│   │   │   ├── <b> js </b>               JS file folder
+│   │   │   ├── <b> less </b>             LESS file folder
+│   │   │   └── <b> libraries </b>        JS Libraries folder
 │   │   │   
-│   │   └── <b> views </b>              View folder
+│   │   └── <b> views </b>                View folder
 │   │   
-│   ├── <b> grunt </b>                  grunt script folder (code optimizer)
+│   ├── <b> grunt </b>                    grunt script folder (code optimizer)
 │   │   
-│   └── <b> libraries </b>              php libraries folder                           PATH_LIBRARIES
+│   └── <b> libraries </b>                php libraries folder                           PATH_LIBRARIES
 │       │  
-│       └── <b> soarin </b>             the soarin framework folder (internals)        PATH_SOARIN
+│       └── <b> soarin </b>               the soarin framework folder (internals)        PATH_SOARIN
 │   
-└── <b> public </b>                     public web folder
+└── <b> public </b>                       public web folder
     │  
-    ├── <b> 404.html </b>               404 file
-    └── <b> index.php </b>              entry point file
+    ├── <b> 404.html </b>                 404 file
+    └── <b> index.php </b>                entry point file
 
 </pre>
