@@ -135,9 +135,9 @@ Directory structure of Soarin
 │   │   │   
 │   │   ├── <b> config </b>  (soarin config)
 │   │   │   │   
-│   │   │   ├── <b> config.php </b>  (config variables)
-│   │   │   ├── <b> errors.php </b>  (error codes handling)
-│   │   │   └── <b> routes.php </b>  (router config)
+│   │   │   ├── <b><u> config.php </u></b>  (config variables)
+│   │   │   ├── <b><u> errors.php </u></b>  (error codes handling)
+│   │   │   └── <b><u> routes.php </u></b>  (router config)
 │   │   │   
 │   │   ├── <b> controllers </b>  (your app's controller classes go here)
 │   │   │   
@@ -147,7 +147,7 @@ Directory structure of Soarin
 │   │   │   
 │   │   ├── <b> styles </b>
 │   │   │   │
-│   │   │   ├── <b> autoload.json </b>  (files to autoload from 'styles/libraries' folder)
+│   │   │   ├── <b><u> autoload.json </u></b>  (files to autoload from 'styles/libraries' folder)
 │   │   │   ├── <b> css </b>  (your app's CSS files)
 │   │   │   ├── <b> images </b>  (your app's image files)
 │   │   │   ├── <b> js </b>  (your app's JavaScript files)
@@ -164,7 +164,7 @@ Directory structure of Soarin
 │   
 └── <b> public </b>  (public web folder)
     │  
-    ├── <b> 404.html </b>  (404 file)
-    └── <b> index.php </b>  (entry point file)
+    ├── <b><u> 404.html </u></b>  (404 file)
+    └── <b><u> index.php </u></b>  (entry point file)
 
 </pre>
