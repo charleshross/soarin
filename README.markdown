@@ -131,40 +131,40 @@ Directory structure of Soarin
 .
 ├── <b> php </b>
 │   │   
-│   ├── <b> app </b>  (your application)
+│   ├── <b> app </b>  your application folder
 │   │   │   
-│   │   ├── <b> config </b>  (soarin config)
+│   │   ├── <b> config </b>  soarin config folder
 │   │   │   │   
-│   │   │   ├── <b> config.php </b>  (config variables)
-│   │   │   ├── <b> errors.php </b>  (error codes handling)
-│   │   │   └── <b> routes.php </b>  (router config)
+│   │   │   ├── <b> config.php </b>  config variables files
+│   │   │   ├── <b> errors.php </b>  error codes handling files
+│   │   │   └── <b> routes.php </b>  router config files
 │   │   │   
-│   │   ├── <b> controllers </b>  (your app's controller classes go here)
+│   │   ├── <b> controllers </b>  controller classes folder
 │   │   │   
-│   │   ├── <b> logs </b>  (log files)
+│   │   ├── <b> logs </b>  log files folder
 │   │   │   
-│   │   ├── <b> models </b>  (your app's model classes go here)
+│   │   ├── <b> models </b>  models classes folder
 │   │   │   
 │   │   ├── <b> styles </b>
 │   │   │   │
-│   │   │   ├── <b> autoload.json </b>  (files to autoload from 'styles/libraries' folder)
-│   │   │   ├── <b> css </b>  (your app's CSS files)
-│   │   │   ├── <b> images </b>  (your app's image files)
-│   │   │   ├── <b> js </b>  (your app's JavaScript files)
-│   │   │   ├── <b> less </b>  (your app's LESS files)
-│   │   │   └── <b> libraries </b>  (JS libraries)
+│   │   │   ├── <b> autoload.json </b>  library autoload config file
+│   │   │   ├── <b> css </b>  			CSS file folder
+│   │   │   ├── <b> images </b>  		static file folder
+│   │   │   ├── <b> js </b>  			JS file folder
+│   │   │   ├── <b> less </b>  			LESS file folder
+│   │   │   └── <b> libraries </b>  	JS Libraries folder
 │   │   │   
-│   │   └── <b> views </b>  (your app's view files go here)
+│   │   └── <b> views </b>  views files folder
 │   │   
-│   ├── <b> grunt </b>  (grunt script folder for auto-minification)
+│   ├── <b> grunt </b>  grunt script folder (code optimizer)
 │   │   
-│   └── <b> libraries </b>  (php libraries folder)
+│   └── <b> libraries </b>  php libraries folder
 │       │  
-│       └── <b> soarin </b>  (the soarin framework internal files)
+│       └── <b> soarin </b>  the soarin framework folder (internals)
 │   
-└── <b> public </b>  (public web folder)
+└── <b> public </b>  public web folder
     │  
-    ├── <b> 404.html </b>  (404 file)
-    └── <b> index.php </b>  (entry point file)
+    ├── <b> 404.html </b>  404 file
+    └── <b> index.php </b>  entry point file
 
 </pre>
