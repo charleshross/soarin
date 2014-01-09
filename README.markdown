@@ -19,13 +19,9 @@ PHP Framework Dependencies
 
 Required:
 
-* [PHP v5.5.6](http://www.php.net/) or later
-* [NGINX v1.5.7](http://nginx.org/) or later
-* [Node.js v0.10.24](http://www.nodejs.org) or later
-
-Required Node Extras:
-
-* [Grunt v0.4.2](http://gruntjs.com/) or later
+* [PHP v5.5.6+](http://www.php.net/)
+* [NGINX v1.5.7+](http://nginx.org/)
+* [Node.js v0.10.24+](http://www.nodejs.org) with [Grunt v0.4.2+](http://gruntjs.com/)
 
 Important framework PHP extras:
 
