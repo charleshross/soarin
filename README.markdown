@@ -21,13 +21,18 @@ Required:
 
 * [PHP v5.5.6](http://www.php.net/) or later
 * [NGINX v1.5.7](http://nginx.org/) or later
+* [Node.js v0.10.24](http://www.nodejs.org) or later
+
+Required Node Extras:
+
+* [Grunt v0.4.2](http://gruntjs.com/) or later
 
 Important framework PHP extras:
 
-* [GD PHP extension](http://php.net/manual/en/book.image.php)
 * [Zend OPcache PHP extension](http://us2.php.net/opcache)
 
 Optional framework PHP extras:
+* [GD PHP extension](http://php.net/manual/en/book.image.php)
 * [phpredis PHP Extension](https://github.com/nicolasff/phpredis)
 * [PHP PDO extension with pdo-mysql and pdo-pgsql](http://www.php.net/manual/en/book.pdo.php)
 * [cURL PHP extension](http://php.net/manual/en/book.curl.php)
