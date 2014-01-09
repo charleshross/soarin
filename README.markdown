@@ -125,11 +125,16 @@ Grunt is included with scripts to auto-compile/minify your project's /php/styles
 
 Framework folder structure
 -----------------------------
-root@debian:/www/soarin# tree
+Directory structure of Soarin
+
 .
+
 ├── php
+
 │   ├── app
+
 │   │   ├── config
+
 │   │   │   ├── config.php
 │   │   │   ├── errors.php
 │   │   │   └── routes.php
