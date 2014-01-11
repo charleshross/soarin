@@ -4,7 +4,7 @@ class Controllers_Soarin_Index {
 	
 	public function read() {
 		
-		include(PATH_VIEWS . '/Soarin/Index.php');
+		include(VIEWS . '/Soarin/Index.php');
 		
 	}
 	

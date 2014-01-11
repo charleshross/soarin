@@ -9,10 +9,10 @@
  */
 
 // Application folder
-$application_folder = '/www/apptreach/php/app';
+$application_folder = '';
 
 // PHP Libraries folder
-$libraries_folder = '/www/apptreach/php/libraries';
+$libraries_folder = '';
 
 /**
  * Setting paths
