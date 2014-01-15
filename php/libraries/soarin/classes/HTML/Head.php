@@ -99,7 +99,14 @@ class HTML_Head {
 
 		// PRODUCTION autoload
 		else if (config::env == 'PRODUCTION') {
-
+			
+			if (!is_dir(WEB . '/styles/')) {
+				
+				echo "Error: Failure loading production files, did you run the grunt script? <a href='https://github.com/charleshross/soarin#readme'>Soarin README file</a>";
+				exit;
+				
+			}
+			
 			$this -> css['/styles/libraries/libraries.css'] = '/styles/libraries/libraries.css';
 			$this -> js['/styles/libraries/libraries.js'] = '/styles/libraries/libraries.js';
 
