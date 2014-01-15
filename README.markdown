@@ -39,15 +39,15 @@ Use a server clause similar to this one, replace <items like this> with your ser
 	
 	server {
 
-		listen <port number here>;
-		server_name localhost:<port number here>;
+		listen <ip address:port number>;
+		server_name <ip:port or domain name>;
 		
 		root <path to soarin folder>/public;
 	    
 		# remove when in 'production'
 		location ~ \.(jpg|jpeg|png|apng|gif|swf|ico|txt|html|htm|js|css|less|eot|svg|ttf|woff)$ {
 			root /;
-			try_files <path to soarin folder>/php/app/$uri <path to soarin folder>/public/$uri 404.html;
+			try_files <path to soarin folder>/php/app/$uri <path to soarin folder>/public/$uri 404.php;
 		}
 		
 		location / {
