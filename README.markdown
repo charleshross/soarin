@@ -156,7 +156,7 @@ Directory structure of Soarin
 │   │   │   ├── <b> less </b>             LESS file folder
 │   │   │   └── <b> libraries </b>        JS Libraries folder
 │   │   │   
-│   │   └── <b> views </b>                View folder
+│   │   └── <b> views </b>                Views folder
 │   │   
 │   ├── <b> grunt </b>                    grunt script folder (code optimizer)
 │   │   
