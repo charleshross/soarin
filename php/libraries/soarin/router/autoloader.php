@@ -23,9 +23,13 @@ function soarin_autoloader($input_classname) {
 	
 	// Application
 	$project_controllers = APP . '/' . str_replace('_', '/', $input_classname) . '.php';
+	$project_controllers_c = APP . '/' . str_replace('_', '/', lcfirst($input_classname)) . '.php';
 	
 	if (file_exists($project_controllers)) {
 		require_once ($project_controllers);
+		return;
+	} else if (file_exists($project_controllers_c)) {
+		require_once ($project_controllers_c);
 		return;
 	}
 	
