@@ -130,7 +130,8 @@ Framework folder structure
 Directory structure of Soarin
 
 <pre>
-<u>Path</u>								  <u>Description</u>									<u>Constant</u>
+Path									  Description									 Constant
+----									  -----------									 --------
 .
 ├── <b> php </b>                          parent folder for internal files
 │   │   
