@@ -1,6 +1,7 @@
 {
 	"libraries": {
 		"jquery": "default",
+		"jquery-ui": "default",
 		"bootstrap": "default",
 		"less": "default"
 	}

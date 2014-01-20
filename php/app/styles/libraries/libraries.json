@@ -43,14 +43,6 @@
 		"css": ["\/styles\/libraries\/bootstrap\/css\/bootstrap.css", "\/styles\/libraries\/bootstrap\/css\/bootstrap-theme.css", "\/styles\/libraries\/bootstrap\/css\/bootstrap.production.fix.css"],
 		"files": ["\/styles\/libraries\/bootstrap\/fonts"]
 	},
-	"mercury": {
-		"description": "Mercury library",
-		"autoload": {
-			"development": true,
-			"production": true
-		},
-		"js": ["\/styles\/libraries\/mercury\/javascripts\/mercury.js"]
-	},
 	"jwplayer": {
 		"description": "jwplayer library",
 		"autoload": {
