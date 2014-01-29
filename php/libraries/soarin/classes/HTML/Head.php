@@ -10,6 +10,7 @@ class HTML_Head {
 	public $js = array();
 	public $css = array();
 	public $less = array();
+	public $inline = array();
 
 	public function __construct($autoload = true) {
 
@@ -99,14 +100,14 @@ class HTML_Head {
 
 		// PRODUCTION autoload
 		else if (config::env == 'PRODUCTION') {
-			
+
 			if (!is_dir(WEB . '/styles/')) {
-				
+
 				echo "Error: Failure loading production files, did you run the grunt script? <a href='https://github.com/charleshross/soarin#readme'>Soarin README file</a>";
-				exit;
-				
+				exit ;
+
 			}
-			
+
 			$this -> css['/styles/libraries/libraries.css'] = '/styles/libraries/libraries.css';
 			$this -> js['/styles/libraries/libraries.js'] = '/styles/libraries/libraries.js';
 
@@ -143,6 +144,12 @@ class HTML_Head {
 
 		$this -> js[$path] = $path;
 
+	}
+
+	public function inline($code) {
+		
+		$this -> inline[] = $code;
+		
 	}
 
 	public function file_check($path) {
@@ -263,6 +270,22 @@ class HTML_Head {
 
 	}
 
+	public function render_inline() {
+
+		$inline = $this -> inline;
+		
+		if (!empty($inline)) {
+
+			foreach ($inline as $key => $value) {
+
+				echo $value;
+
+			}
+
+		}
+
+	}
+
 	public function output() {
 
 		// HTML5 Doctype
@@ -288,6 +311,9 @@ class HTML_Head {
 
 		// JS
 		$this -> render_js();
+
+		// INLINE
+		$this -> render_inline();
 
 		// Head tag end
 		echo "</head> \n";

@@ -14,7 +14,8 @@
 		"grunt-contrib-less": "latest",
 		"grunt-dart2js": "latest",
 		"grunt-contrib-copy": "latest",
-		"grunt-contrib-clean": "latest"
+		"grunt-contrib-clean": "latest",
+		"grunt-ts" : "latest"
 	},
 	"devDependencies": {},
 	"scripts": {

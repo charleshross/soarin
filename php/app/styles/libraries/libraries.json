@@ -5,7 +5,7 @@
 			"development": true,
 			"production": true
 		},
-		"js": ["\/styles\/libraries\/jquery\/jquery-1.10.2.js"]
+		"js": ["\/styles\/libraries\/jquery\/jquery-1.11.0.js"]
 	},
 	"jquery-ui": {
 		"description": "jQuery-UI library",
@@ -13,8 +13,8 @@
 			"development": true,
 			"production": true
 		},
-		"js": ["\/styles\/libraries\/jquery-ui\/jquery-ui-1.10.2.js"],
-		"css": ["\/styles\/libraries\/jquery-ui\/css\/redmond\/jquery-ui-1.10.3.custom.css"],
+		"js": ["\/styles\/libraries\/jquery-ui\/jquery-ui-1.10.4.js"],
+		"css": ["\/styles\/libraries\/jquery-ui\/css\/redmond\/jquery-ui-1.10.4.custom.css"],
 		"files": ["\/styles\/libraries\/jquery-ui\/css\/redmond\/images"]
 	},
 	"jquery-migrate": {
@@ -23,7 +23,7 @@
 			"development": true,
 			"production": true
 		},
-		"js": ["\/styles\/libraries\/jquery-migrate\/jquery-migrate.js"]
+		"js": ["\/styles\/libraries\/jquery-migrate\/jquery-migrate-1.2.1.js"]
 	},
 	"less": {
 		"description": "LESS library",
@@ -31,7 +31,7 @@
 			"development": true,
 			"production": false
 		},
-		"js": ["\/styles\/libraries\/less\/less-1.5.1.js"]
+		"js": ["\/styles\/libraries\/less\/less-1.6.1.js"]
 	},
 	"bootstrap": {
 		"description": "Bootstrap library",
@@ -40,18 +40,8 @@
 			"production": true
 		},
 		"js": ["\/styles\/libraries\/bootstrap\/js\/bootstrap.js"],
-		"css": ["\/styles\/libraries\/bootstrap\/css\/bootstrap.css", "\/styles\/libraries\/bootstrap\/css\/bootstrap-theme.css", "\/styles\/libraries\/bootstrap\/css\/bootstrap.production.fix.css"],
+		"css": ["\/styles\/libraries\/bootstrap\/css\/bootstrap.css", "\/styles\/libraries\/bootstrap\/css\/bootstrap.production.fix.css"],
 		"files": ["\/styles\/libraries\/bootstrap\/fonts"]
-	},
-	"jwplayer": {
-		"description": "jwplayer library",
-		"autoload": {
-			"development": true,
-			"production": true
-		},
-		"js": ["\/styles\/libraries\/jwplayer\/jwplayer.js"],
-		"css": ["\/styles\/libraries\/jwplayer\/"],
-		"files": ["\/styles\/libraries\/jwplayer\/jwplayer.flash.swf"]
 	},
 	"socket.io": {
 		"description": "socket.io library",
@@ -60,5 +50,21 @@
 			"production": false
 		},
 		"js": ["\/styles\/libraries\/socket.io\/socket.io.js"]
+	},
+	"underscore": {
+		"description": "underscore library",
+		"autoload": {
+			"development": true,
+			"production": true
+		},
+		"js": ["\/styles\/libraries\/underscore\/underscore.js"]
+	},
+	"route-pattern": {
+		"description": "route-pattern library",
+		"autoload": {
+			"development": true,
+			"production": true
+		},
+		"js": ["\/styles\/libraries\/route-pattern\/route-pattern.js"]
 	}
 }

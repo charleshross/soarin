@@ -1,7 +1,7 @@
 /* jshint node: true */
 
 // Gruntfile
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
 	// Dependencies
 	grunt.loadNpmTasks('grunt-contrib-concat');
@@ -13,12 +13,14 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-dart2js');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-ts');
 
 	// Configuration
 	grunt.initConfig({
 
 		// Read package.json file
-		pkg : grunt.file.readJSON('package.json'),
+		pkg: grunt.file.readJSON('package.json'),
 
 	});
 
@@ -28,4 +30,4 @@ module.exports = function(grunt) {
 	// Default tasks
 	grunt.registerTask('default', ['clean-public', 'libraries', 'images', 'less-to-css', 'css', 'js']);
 
-}; 
+};

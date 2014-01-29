@@ -37,7 +37,7 @@ $head -> output();
       </div>
     </div>
 
-    <div class="container">
+    <div class="container" style='padding-top: 70px;'>
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">

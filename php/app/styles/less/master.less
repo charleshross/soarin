@@ -1,1 +1,31 @@
+/* Variables */
+@margin: 20px;
+@background: #f8f8f8;
+@border_radius: 3px;
+@border_color: #c5c8cb;
+@color: #333;
+
+/* Mixins */
+.default-font {
+  color:@color;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.3em;
+}
+
+.default-shadow {
+  box-shadow: 1px 1px 4px #E0E0E0;
+}
+
+.default-color {
+  color:@color;
+}
+
+.default-border {
+  border-color:@border_color;
+}
+
+/* Stylesheets */
 @import "assets/body.less";
+
+/* Stylesheets Extra */
+@import "assets/ipad.less";
