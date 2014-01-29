@@ -22,7 +22,7 @@ class config {
 	 * Session Name (no spaces)
 	 * Enter something unique so that your project's session doesn't collide with other projects
 	 */
-	const soarin_session_name = '';
+	const soarin_session_name = 'ENTER_SOMETHING_UNIQUE_HERE!';
 	
 	/**
 	 * Session Type (files|redis)
@@ -34,25 +34,25 @@ class config {
 	 * Redis Protocol
 	 * Default is 'tcp'
 	 */
-	const redis_protocol = '';
+	const redis_protocol = 'tcp';
 	
 	/**
 	 * Redis Hostname
 	 * Default is 'localhost'
 	 */
-	const redis_host = '';
+	const redis_host = 'localhost';
 	
 	/**
 	 * Redis Connection Port
 	 * Default is '6379'
 	 */
-	const redis_port = '';
+	const redis_port = '6379';
 	
 	/**
 	 * Redis Database
 	 * Default is '1'
 	 */
-	const redis_session_db = '';
+	const redis_session_db = '1';
 	
 	/**
 	 * 	Session Path Override

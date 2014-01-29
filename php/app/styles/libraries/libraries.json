@@ -33,14 +33,24 @@
 		},
 		"js": ["\/styles\/libraries\/less\/less-1.6.1.js"]
 	},
-	"bootstrap": {
-		"description": "Bootstrap library",
+	"bootstrap-development": {
+		"description": "Bootstrap library (soarin development version)",
 		"autoload": {
 			"development": true,
+			"production": false
+		},
+		"js": ["\/styles\/libraries\/bootstrap\/js\/bootstrap.js"],
+		"css": ["\/styles\/libraries\/bootstrap\/css\/bootstrap-development.css"],
+		"files": ["\/styles\/libraries\/bootstrap\/fonts"]
+	},
+	"bootstrap-production": {
+		"description": "Bootstrap library (soarin production version)",
+		"autoload": {
+			"development": false,
 			"production": true
 		},
 		"js": ["\/styles\/libraries\/bootstrap\/js\/bootstrap.js"],
-		"css": ["\/styles\/libraries\/bootstrap\/css\/bootstrap.css", "\/styles\/libraries\/bootstrap\/css\/bootstrap.production.fix.css"],
+		"css": ["\/styles\/libraries\/bootstrap\/css\/bootstrap-production.css"],
 		"files": ["\/styles\/libraries\/bootstrap\/fonts"]
 	},
 	"socket.io": {

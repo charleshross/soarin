@@ -2,7 +2,8 @@
 	"libraries": {
 		"jquery": "default",
 		"jquery-ui": "default",
-		"bootstrap": "default",
+		"bootstrap-development": "default",
+		"bootstrap-production": "default",
 		"less": "default"
 	}
 }

@@ -1,14 +1,23 @@
 <?php
 
+// Start <head> code
 $head = new HTML_Head();
 
+// Page Title
 $head -> title('Soarin PHP Framework');
 
+// Favicon
 $head -> icon('/styles/images/soarin.png');
 
+// LESS files
 $head -> less('/styles/less/master.less');
 
+// Javascripts
+$head -> js('/styles/js/master.js');
+
+// Output <head> code
 $head -> output();
+
 ?>
 
 <body>
@@ -23,7 +32,7 @@ $head -> output();
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <div class="navbar-brand">Soarin-PHP</div>
+          <div class="navbar-brand"><span class="glyphicon glyphicon-flash" style='float:left;margin-right:5px;'></span> Soarin-PHP</div>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
