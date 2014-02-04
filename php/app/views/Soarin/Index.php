@@ -1,7 +1,7 @@
 <?php
 
 // Start <head> code
-$head = new HTML_Head();
+$head = new Soarin\HTML\Head();
 
 // Page Title
 $head -> title('Soarin PHP Framework');

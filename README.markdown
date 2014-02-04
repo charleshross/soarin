@@ -43,6 +43,8 @@ Use a server clause similar to this one, replace <items like this> with your ser
 		server_name <ip:port or domain name>;
 		
 		root <path to soarin folder>/public;
+
+		rewrite ^([^.]*[^/])$ $1/ permanent;
 	    
 		# remove when in 'production'
 		location ~ \.(jpg|jpeg|png|apng|gif|swf|ico|txt|html|htm|js|css|less|eot|svg|ttf|woff)$ {
@@ -80,13 +82,14 @@ NGINX Compile Configuration
 -----------------------------
 The NGINX web server used for this project was configured with these options
 
-	./configure --prefix=/opt/nginx \
+	./configure \
+	--prefix=/opt/nginx \
 	--with-pcre \
 	--with-http_ssl_module \
 	--with-http_flv_module \
 	--with-http_realip_module \
 	--with-http_mp4_module \
-	--with-mail \
+	--with-mail
 
 Required Debian packages: gcc libpcre3 libpcre3-dev zlib1g zlib1g-dev openssl libssl-dev
 
@@ -94,7 +97,8 @@ PHP Compile Configuration
 -----------------------------
 PHP was compiled for this project using these configuration options
 
-	./configure --prefix=/opt/php \
+	./configure \
+	--prefix=/opt/php \
 	--with-mysql=shared,/opt/mysql/server-5.6 \
 	--with-pgsql=/var/lib/postgresql/9.3/main \
 	--with-jpeg-dir \
@@ -109,9 +113,10 @@ PHP was compiled for this project using these configuration options
 	--enable-sockets \
 	--enable-fpm \
 	--with-pear \
+	--with-pspell=/usr \
 	--enable-opcache
 
-Required Debian packages: libxml2-dev libcurl4-gnutls-dev libpng12-0 libpng12-dev libjpeg62 libjpeg62-dev libpq-dev
+Required Debian packages: libxml2-dev libcurl4-gnutls-dev libpng12-0 libpng12-dev libjpeg62 libjpeg62-dev libpq-dev aspell libaspell15 libaspell-dev libpspell-dev
 
 Note: to enable opcache you must add "zend_extension=opcache.so" to your PHP.INI file
 
@@ -137,34 +142,34 @@ Path							   Description									  Constant
 │   │   
 │   ├── <b> app </b>                      your application folder                        APP
 │   │   │   
-│   │   ├── <b> config </b>               application config folder
-│   │   │   │   
-│   │   │   ├── <b> config.php </b>       Soarin config variables files
-│   │   │   ├── <b> errors.php </b>       Error code handling file
-│   │   │   └── <b> routes.php </b>       Router configuration file
-│   │   │   
-│   │   ├── <b> controllers </b>          Controllers folder
-│   │   │   
-│   │   ├── <b> logs </b>                 log files folder
+│   │   ├── <b> controllers </b>          Controllers folder                             CONTROLLERS
 │   │   │   
 │   │   ├── <b> models </b>               Models folder                                  MODELS
 │   │   │   
+│   │   ├── <b> routes </b>               application config folder
+│   │   │   │   
+│   │   │   ├── <b> errors.php </b>       Error code handling file
+│   │   │   └── <b> routes.php </b>       Router configuration file
+│   │   │   
 │   │   ├── <b> styles </b>               Frontend styles folder                         STYLES
 │   │   │   │
-│   │   │   ├── <b> autoload.json </b>    library autoload config file
-│   │   │   ├── <b> css </b>              CSS file folder
 │   │   │   ├── <b> images </b>           static file folder
 │   │   │   ├── <b> js </b>               JS file folder
-│   │   │   ├── <b> less </b>             LESS file folder
-│   │   │   └── <b> libraries </b>        JS Libraries folder
+│   │   │   ├── <b> less </b>             LESS(CSS) file folder
+│   │   │   ├── <b> libraries </b>        JS Libraries folder
+│   │   │   └── <b> autoload.json </b>    library autoload config file
 │   │   │   
-│   │   └── <b> views </b>                Views folder
+│   │   └── <b> views </b>                Views folder                                   VIEWS
 │   │   
 │   ├── <b> grunt </b>                    grunt script folder (code optimizer)
 │   │   
-│   └── <b> libraries </b>                php libraries folder                           LIBRARIES
+│   ├── <b> logs </b>                     log files folder
+│   │   
+│   └── <b> php-libraries </b>            php libraries folder                           LIBRARIES
 │       │  
 │       └── <b> soarin </b>               the soarin framework folder (internals)        SOARIN
+│           │  
+│           └── <b> config.php </b>       Soarin config variables file
 │   
 └── <b> public </b>                       parent folder for public web files
     │  

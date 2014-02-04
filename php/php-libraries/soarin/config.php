@@ -3,26 +3,44 @@
 class config {
 	
 	/**
+	 * Directory configuration
+	 */
+	const php_dir = '/../php';
+	const app_dir = '/../php/app';
+	const controllers_dir = '/../php/app/controllers';
+	const models_dir = '/../php/app/models';
+	const views_dir = '/../php/app/views';
+	const styles_dir = '/../php/app/styles';
+	const libraries_dir = '/../php/php-libraries';
+	const logs_dir = '/../php/logs';
+	
+	/**
+	 * Routes configuration
+	 */
+	const routes_file = '/../php/app/routes/routes.php';
+	const routes_errors_file = '/../php/app/routes/errors.php';
+	
+	/**
 	 * Environment (DEVELOPMENT | PRODUCTION)
 	 * IMPORTANT! If using 'PRODUCTION' make sure to disable public access to "/frontend" folder
 	 */
 	const env = 'DEVELOPMENT';
 	
 	/**
-	 * Force URL's to end in slash
-	 */
-	const force_trailing_slash = TRUE;
-	
-	/**
 	 * Force URL's to be lowercase
 	 */
-	const force_lower_case = TRUE;
+	const force_lowercase_urls = TRUE;
 	
 	/**
 	 * Session Name (no spaces)
 	 * Enter something unique so that your project's session doesn't collide with other projects
 	 */
 	const soarin_session_name = 'ENTER_SOMETHING_UNIQUE_HERE!';
+	
+	/**
+	 * Session autoload
+	 */
+	const session_autoload = true;
 	
 	/**
 	 * Session Type (files|redis)

@@ -5,7 +5,7 @@ spl_autoload_register('soarin_autoloader');
 
 // Soarin autoload function
 function soarin_autoloader($input_classname) {
-	
+
 	// Performance optimization
 	static $already_checked = array();
 	if (array_key_exists($input_classname, $already_checked)) {
@@ -13,39 +13,31 @@ function soarin_autoloader($input_classname) {
 	}
 	$already_checked[$input_classname] = true;
 	
+	$input_classname = preg_replace('/controllers\b/i','controllers',$input_classname);
+	$input_classname = preg_replace('/models\b/i','models',$input_classname);
+	$input_classname = str_replace("\\","/",$input_classname);
+	
 	// Zaphpa
-	$zaphpa_path = __DIR__ . '/zaphpa/plugins/' . $input_classname . '.class.php';
+	$zaphpa_path = SOARIN . '/router/zaphpa/plugins/' . $input_classname . '.class.php';
 	
 	if (file_exists($zaphpa_path)) {
 		require_once ($zaphpa_path);
 		return;
 	}
 	
-	// Application
-	$project_app_class = APP . '/' . str_replace('_', '/', $input_classname) . '.php';
-	$project_app_class_c = APP . '/' . str_replace('_', '/', lcfirst($input_classname)) . '.php';
+	// App
+	$soarin_controller = APP . '/' . $input_classname . '.php';
 	
-	if (file_exists($project_app_class)) {
-		require_once ($project_app_class);
-		return;
-	} else if (file_exists($project_app_class_c)) {
-		require_once ($project_app_class_c);
+	if (file_exists($soarin_controller)) {
+		require_once ($soarin_controller);
 		return;
 	}
 	
-	// Soarin library
-	$soarin_classes = SOARIN . '/classes/' . str_replace('_', '/', $input_classname) . '.php';
+	// Soarin
+	$soarin_classes = SOARIN . '/core/' . $input_classname . '.php';
 	
 	if (file_exists($soarin_classes)) {
 		require_once ($soarin_classes);
-		return;
-	}
-	
-	// PHP Libraries
-	$libraries_path = LIBRARIES . '/' . $input_classname . '.php';
-	
-	if (file_exists($libraries_path)) {
-		require_once ($libraries_path);
 		return;
 	}
 	

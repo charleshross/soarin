@@ -1,0 +1,40 @@
+/* Variables */
+/* Mixins */
+.default-font {
+  color: #333333;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.3em;
+}
+.default-shadow {
+  box-shadow: 1px 1px 4px #E0E0E0;
+}
+.default-color {
+  color: #333333;
+}
+.default-border {
+  border-color: #c5c8cb;
+}
+/* Stylesheets */
+body {
+  color: #333333;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.3em;
+  background-color: #f8f8f8;
+  min-width: 930px;
+}
+a:focus {
+  outline: none !important;
+}
+input[type='checkbox'] {
+  outline: none !important;
+}
+/* Stylesheets Extra */
+@media only screen and (device-width: 768px) {
+  /* For general iPad layouts */
+}
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) {
+  /* For portrait layouts only */
+}
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* For landscape layouts only */
+}

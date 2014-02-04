@@ -1,11 +1,14 @@
 <?php
 
-class Controllers_Soarin_Index {
+namespace Controllers\Soarin {
 	
-	public function read() {
-		
-		include(VIEWS . '/Soarin/Index.php');
+	class Index extends \Soarin\Controller {
+	
+		public function read($res,$req) {
+			
+			$this->view();
+			
+		}
 		
 	}
-	
 }
