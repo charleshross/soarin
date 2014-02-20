@@ -47,7 +47,7 @@ Use a server clause similar to this one, replace <items like this> with your ser
 		rewrite ^([^.]*[^/])$ $1/ permanent;
 	    
 		# remove when in 'production'
-		location ~ \.(jpg|jpeg|png|apng|gif|swf|ico|txt|html|htm|js|css|less|eot|svg|ttf|woff)$ {
+		location ~ \.(jpg|jpeg|png|apng|gif|swf|ico|txt|html|htm|js|css|less|eot|svg|ttf|woff|map)$ {
 			root /;
 			try_files <path to soarin folder>/php/app/$uri <path to soarin folder>/public/$uri 404.php;
 		}
@@ -114,6 +114,7 @@ PHP was compiled for this project using these configuration options
 	--enable-fpm \
 	--with-pear \
 	--with-pspell=/usr \
+	--with-openssl \
 	--enable-opcache
 
 Required Debian packages: libxml2-dev libcurl4-gnutls-dev libpng12-0 libpng12-dev libjpeg62 libjpeg62-dev libpq-dev aspell libaspell15 libaspell-dev libpspell-dev
