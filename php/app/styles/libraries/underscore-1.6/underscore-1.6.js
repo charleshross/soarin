@@ -1,4 +1,4 @@
-//     Underscore.js 1.5.2
+//     Underscore.js 1.6.0
 //     http://underscorejs.org
 //     (c) 2009-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 //     Underscore may be freely distributed under the MIT license.
@@ -65,7 +65,7 @@
   }
 
   // Current version.
-  _.VERSION = '1.5.2';
+  _.VERSION = '1.6.0';
 
   // Collection Functions
   // --------------------
@@ -74,7 +74,7 @@
   // Handles objects with the built-in `forEach`, arrays, and raw objects.
   // Delegates to **ECMAScript 5**'s native `forEach` if available.
   var each = _.each = _.forEach = function(obj, iterator, context) {
-    if (obj == null) return;
+    if (obj == null) return obj;
     if (nativeForEach && obj.forEach === nativeForEach) {
       obj.forEach(iterator, context);
     } else if (obj.length === +obj.length) {
@@ -87,6 +87,7 @@
         if (iterator.call(context, obj[keys[i]], keys[i], obj) === breaker) return;
       }
     }
+    return obj;
   };
 
   // Return the results of applying the iterator to each element.
@@ -152,10 +153,10 @@
   };
 
   // Return the first value which passes a truth test. Aliased as `detect`.
-  _.find = _.detect = function(obj, iterator, context) {
+  _.find = _.detect = function(obj, predicate, context) {
     var result;
     any(obj, function(value, index, list) {
-      if (iterator.call(context, value, index, list)) {
+      if (predicate.call(context, value, index, list)) {
         result = value;
         return true;
       }
@@ -166,33 +167,33 @@
   // Return all the elements that pass a truth test.
   // Delegates to **ECMAScript 5**'s native `filter` if available.
   // Aliased as `select`.
-  _.filter = _.select = function(obj, iterator, context) {
+  _.filter = _.select = function(obj, predicate, context) {
     var results = [];
     if (obj == null) return results;
-    if (nativeFilter && obj.filter === nativeFilter) return obj.filter(iterator, context);
+    if (nativeFilter && obj.filter === nativeFilter) return obj.filter(predicate, context);
     each(obj, function(value, index, list) {
-      if (iterator.call(context, value, index, list)) results.push(value);
+      if (predicate.call(context, value, index, list)) results.push(value);
     });
     return results;
   };
 
   // Return all the elements for which a truth test fails.
-  _.reject = function(obj, iterator, context) {
+  _.reject = function(obj, predicate, context) {
     return _.filter(obj, function(value, index, list) {
-      return !iterator.call(context, value, index, list);
+      return !predicate.call(context, value, index, list);
     }, context);
   };
 
   // Determine whether all of the elements match a truth test.
   // Delegates to **ECMAScript 5**'s native `every` if available.
   // Aliased as `all`.
-  _.every = _.all = function(obj, iterator, context) {
-    iterator || (iterator = _.identity);
+  _.every = _.all = function(obj, predicate, context) {
+    predicate || (predicate = _.identity);
     var result = true;
     if (obj == null) return result;
-    if (nativeEvery && obj.every === nativeEvery) return obj.every(iterator, context);
+    if (nativeEvery && obj.every === nativeEvery) return obj.every(predicate, context);
     each(obj, function(value, index, list) {
-      if (!(result = result && iterator.call(context, value, index, list))) return breaker;
+      if (!(result = result && predicate.call(context, value, index, list))) return breaker;
     });
     return !!result;
   };
@@ -200,13 +201,13 @@
   // Determine if at least one element in the object matches a truth test.
   // Delegates to **ECMAScript 5**'s native `some` if available.
   // Aliased as `any`.
-  var any = _.some = _.any = function(obj, iterator, context) {
-    iterator || (iterator = _.identity);
+  var any = _.some = _.any = function(obj, predicate, context) {
+    predicate || (predicate = _.identity);
     var result = false;
     if (obj == null) return result;
-    if (nativeSome && obj.some === nativeSome) return obj.some(iterator, context);
+    if (nativeSome && obj.some === nativeSome) return obj.some(predicate, context);
     each(obj, function(value, index, list) {
-      if (result || (result = iterator.call(context, value, index, list))) return breaker;
+      if (result || (result = predicate.call(context, value, index, list))) return breaker;
     });
     return !!result;
   };
@@ -237,19 +238,14 @@
 
   // Convenience version of a common use case of `filter`: selecting only objects
   // containing specific `key:value` pairs.
-  _.where = function(obj, attrs, first) {
-    return _[first ? 'find' : 'filter'](obj, function(value) {
-      for (var key in attrs) {
-        if (attrs[key] !== value[key]) return false;
-      }
-      return true;
-    });
+  _.where = function(obj, attrs) {
+    return _.filter(obj, _.matches(attrs));
   };
 
   // Convenience version of a common use case of `find`: getting the first object
   // containing specific `key:value` pairs.
   _.findWhere = function(obj, attrs) {
-    return _.where(obj, attrs, true);
+    return _.find(obj, _.matches(attrs));
   };
 
   // Return the maximum element or (element-based computation).
@@ -259,13 +255,15 @@
     if (!iterator && _.isArray(obj) && obj[0] === +obj[0] && obj.length < 65535) {
       return Math.max.apply(Math, obj);
     }
-    if (!iterator && _.isEmpty(obj)) return -Infinity;
-    var result = {computed : -Infinity, value: -Infinity};
+    var result = -Infinity, lastComputed = -Infinity;
     each(obj, function(value, index, list) {
       var computed = iterator ? iterator.call(context, value, index, list) : value;
-      computed > result.computed && (result = {value : value, computed : computed});
+      if (computed > lastComputed) {
+        result = value;
+        lastComputed = computed;
+      }
     });
-    return result.value;
+    return result;
   };
 
   // Return the minimum element (or element-based computation).
@@ -273,13 +271,15 @@
     if (!iterator && _.isArray(obj) && obj[0] === +obj[0] && obj.length < 65535) {
       return Math.min.apply(Math, obj);
     }
-    if (!iterator && _.isEmpty(obj)) return Infinity;
-    var result = {computed : Infinity, value: Infinity};
+    var result = Infinity, lastComputed = Infinity;
     each(obj, function(value, index, list) {
       var computed = iterator ? iterator.call(context, value, index, list) : value;
-      computed < result.computed && (result = {value : value, computed : computed});
+      if (computed < lastComputed) {
+        result = value;
+        lastComputed = computed;
+      }
     });
-    return result.value;
+    return result;
   };
 
   // Shuffle an array, using the modern version of the
@@ -460,6 +460,17 @@
     return _.difference(array, slice.call(arguments, 1));
   };
 
+  // Split an array into two arrays: one whose elements all satisfy the given
+  // predicate, and one whose elements all do not satisfy the predicate.
+  _.partition = function(array, predicate, context) {
+    predicate = lookupIterator(predicate);
+    var pass = [], fail = [];
+    each(array, function(elem) {
+      (predicate.call(context, elem) ? pass : fail).push(elem);
+    });
+    return [pass, fail];
+  };
+
   // Produce a duplicate-free version of the array. If the array has already
   // been sorted, you have the option of using a faster algorithm.
   // Aliased as `unique`.
@@ -508,7 +519,7 @@
   // Zip together multiple lists into a single array -- elements that share
   // an index go together.
   _.zip = function() {
-    var length = _.max(_.pluck(arguments, "length").concat(0));
+    var length = _.max(_.pluck(arguments, 'length').concat(0));
     var results = new Array(length);
     for (var i = 0; i < length; i++) {
       results[i] = _.pluck(arguments, '' + i);
@@ -634,7 +645,7 @@
   // defined on an object belong to it.
   _.bindAll = function(obj) {
     var funcs = slice.call(arguments, 1);
-    if (funcs.length === 0) throw new Error("bindAll must be passed function names");
+    if (funcs.length === 0) throw new Error('bindAll must be passed function names');
     each(funcs, function(f) { obj[f] = _.bind(obj[f], obj); });
     return obj;
   };
@@ -703,22 +714,24 @@
   // leading edge, instead of the trailing.
   _.debounce = function(func, wait, immediate) {
     var timeout, args, context, timestamp, result;
+
+    var later = function() {
+      var last = _.now() - timestamp;
+      if (last < wait) {
+        timeout = setTimeout(later, wait - last);
+      } else {
+        timeout = null;
+        if (!immediate) {
+          result = func.apply(context, args);
+          context = args = null;
+        }
+      }
+    };
+
     return function() {
       context = this;
       args = arguments;
       timestamp = _.now();
-      var later = function() {
-        var last = _.now() - timestamp;
-        if (last < wait) {
-          timeout = setTimeout(later, wait - last);
-        } else {
-          timeout = null;
-          if (!immediate) {
-            result = func.apply(context, args);
-            context = args = null;
-          }
-        }
-      };
       var callNow = immediate && !timeout;
       if (!timeout) {
         timeout = setTimeout(later, wait);
@@ -1087,6 +1100,18 @@
     return function(obj) {
       return obj[key];
     };
+  };
+
+  // Returns a predicate for checking whether an object has a given set of `key:value` pairs.
+  _.matches = function(attrs) {
+    return function(obj) {
+      if (obj === attrs) return true; //avoid comparing an object to itself.
+      for (var key in attrs) {
+        if (attrs[key] !== obj[key])
+          return false;
+      }
+      return true;
+    }
   };
 
   // Run a function **n** times.

@@ -5,7 +5,7 @@
 			"development": true,
 			"production": true
 		},
-		"js": ["\/styles\/libraries\/jquery\/jquery-1.11.0.js"]
+		"js": ["\/styles\/libraries\/jquery-1.11.0\/jquery-1.11.0.js"]
 	},
 	"jquery-ui": {
 		"description": "jQuery-UI library",
@@ -13,9 +13,9 @@
 			"development": true,
 			"production": true
 		},
-		"js": ["\/styles\/libraries\/jquery-ui\/jquery-ui-1.10.4.js"],
-		"css": ["\/styles\/libraries\/jquery-ui\/css\/redmond\/jquery-ui-1.10.4.custom.css"],
-		"files": ["\/styles\/libraries\/jquery-ui\/css\/redmond\/images"]
+		"js": ["\/styles\/libraries\/jquery-ui-1.10.4\/jquery-ui-1.10.4.js"],
+		"css": ["\/styles\/libraries\/jquery-ui-1.10.4\/css\/redmond\/jquery-ui-1.10.4.custom.css"],
+		"files": ["\/styles\/libraries\/jquery-ui-1.10.4\/css\/redmond\/images"]
 	},
 	"jquery-migrate": {
 		"description": "jQuery-Migrate",
@@ -23,7 +23,7 @@
 			"development": true,
 			"production": true
 		},
-		"js": ["\/styles\/libraries\/jquery-migrate\/jquery-migrate-1.2.1.js"]
+		"js": ["\/styles\/libraries\/jquery-migrate-1.2.1\/jquery-migrate-1.2.1.js"]
 	},
 	"less": {
 		"description": "LESS library",
@@ -31,7 +31,7 @@
 			"development": true,
 			"production": false
 		},
-		"js": ["\/styles\/libraries\/less\/less-1.6.1.js"]
+		"js": ["\/styles\/libraries\/less-1.6.3\/less-1.6.3.js"]
 	},
 	"bootstrap-development": {
 		"description": "Bootstrap library (soarin development version)",
@@ -39,9 +39,9 @@
 			"development": true,
 			"production": false
 		},
-		"js": ["\/styles\/libraries\/bootstrap\/js\/bootstrap.js"],
-		"css": ["\/styles\/libraries\/bootstrap\/css\/bootstrap-development.css"],
-		"files": ["\/styles\/libraries\/bootstrap\/fonts"]
+		"js": ["\/styles\/libraries\/bootstrap-3.1.1\/js\/bootstrap.js"],
+		"css": ["\/styles\/libraries\/bootstrap-3.1.1\/css\/bootstrap-development.css"],
+		"files": ["\/styles\/libraries\/bootstrap-3.1.1\/fonts"]
 	},
 	"bootstrap-production": {
 		"description": "Bootstrap library (soarin production version)",
@@ -49,9 +49,9 @@
 			"development": false,
 			"production": true
 		},
-		"js": ["\/styles\/libraries\/bootstrap\/js\/bootstrap.js"],
-		"css": ["\/styles\/libraries\/bootstrap\/css\/bootstrap-production.css"],
-		"files": ["\/styles\/libraries\/bootstrap\/fonts"]
+		"js": ["\/styles\/libraries\/bootstrap-3.1.1\/js\/bootstrap.js"],
+		"css": ["\/styles\/libraries\/bootstrap-3.1.1\/css\/bootstrap-production.css"],
+		"files": ["\/styles\/libraries\/bootstrap-3.1.1\/fonts"]
 	},
 	"socket.io": {
 		"description": "socket.io library",
@@ -67,7 +67,7 @@
 			"development": true,
 			"production": true
 		},
-		"js": ["\/styles\/libraries\/underscore\/underscore.js"]
+		"js": ["\/styles\/libraries\/underscore-1.6\/underscore-1.6.js"]
 	},
 	"route-pattern": {
 		"description": "route-pattern library",
