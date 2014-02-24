@@ -33,7 +33,7 @@ else if (config::soarin_session_save_handler == 'redis') {
 		if (config::redis_protocol == '') {
 			$session_path .= 'tcp://';
 		} else {
-			$session_path .= config::redis_protocol;
+			$session_path .= config::redis_protocol . '://';
 		}
 
 		// Host
