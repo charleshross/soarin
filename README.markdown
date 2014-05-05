@@ -1,18 +1,31 @@
 Soarin PHP Framework
 ===========================
-PHP as fast as possible
+PHP as fast as possible.
 
 Introduction
 -----------------------------
 
-This software is a super lightweight RESTful framework for your future PHP code base. Every attempt has been made to make it as fast as possible (especially if you include all the below extensions properly).
+This software is a super lightweight RESTful framework for your future PHP code base. Every attempt has been made to make it as fast as possible. For best performance it's recommended that you install the latest PHP with opcache enabled as documented below.
 
 Installation
 -----------------------------
 
-1. Setup a server (coming soon)
-2. [Setup web software](https://github.com/charleshross/soarin/wiki/Setup-web-server)
-3. Setup Soarin (coming soon)
+1. **[Server Environment](/charleshross/soarin/wiki/Server-Environment)**
+ - [Setup VirtualBox on Windows 7](/charleshross/soarin/wiki/Setup-VirtualBox-on-Windows-7)
+2. **[Databases (Optional)](/charleshross/soarin/wiki/Databases)**
+ - [Setup MySQL Database](/charleshross/soarin/wiki/Setup-MySQL-Database)
+ - [Setup Redis Database](/charleshross/soarin/wiki/Setup-Redis-Database)
+3. **[Web Software](/charleshross/soarin/wiki/Web-Software)**
+ - [Setup NGINX Web Server](/charleshross/soarin/wiki/Setup-NGINX-Web-Server)
+ - [Setup PHP for NGINX](/charleshross/soarin/wiki/Setup-PHP-for-NGINX)
+4. **[Web Extras](/charleshross/soarin/wiki/Web-Extras)**
+ - [Setup PHP Redis Extension](/charleshross/soarin/wiki/Setup-PHP-Redis-Extension)
+ - [Setup Node.js](/charleshross/soarin/wiki/Setup-NodeJS)
+ - [Setup Grunt](/charleshross/soarin/wiki/Setup-Grunt)
+ - [Setup PHP Stemming Extension](/charleshross/soarin/wiki/Setup-PHP-Stemming-Extension)
+ - [Setup GraphicsMagick with PHP Extension](/charleshross/soarin/wiki/Setup-GraphicsMagick-with-PHP-Extension)
+ - [Setup FFMPEG](/charleshross/soarin/wiki/Setup-FFMPEG)
+5. **[Soarin Setup](/charleshross/soarin/wiki/Soarin-Setup)**
 
 PHP Framework Dependencies
 -----------------------------
@@ -47,7 +60,7 @@ Use a server clause similar to this one, replace <items like this> with your ser
 		rewrite ^([^.]*[^/])$ $1/ permanent;
 	    
 		# remove when in 'production'
-		location ~ \.(jpg|jpeg|png|apng|gif|swf|ico|txt|html|htm|js|css|less|eot|svg|ttf|woff|map)$ {
+		location ~ \.(jpg|jpeg|png|apng|gif|swf|ico|txt|html|htm|js|css|less|eot|svg|ttf|woff)$ {
 			root /;
 			try_files <path to soarin folder>/php/app/$uri <path to soarin folder>/public/$uri 404.php;
 		}
@@ -114,7 +127,6 @@ PHP was compiled for this project using these configuration options
 	--enable-fpm \
 	--with-pear \
 	--with-pspell=/usr \
-	--with-openssl \
 	--enable-opcache
 
 Required Debian packages: libxml2-dev libcurl4-gnutls-dev libpng12-0 libpng12-dev libjpeg62 libjpeg62-dev libpq-dev aspell libaspell15 libaspell-dev libpspell-dev
