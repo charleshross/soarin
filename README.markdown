@@ -10,22 +10,22 @@ This software is a super lightweight RESTful framework for your future PHP code 
 Installation
 -----------------------------
 
-1. **[Server Environment](/charleshross/soarin/wiki/Server-Environment)**
- - [Setup VirtualBox on Windows 7](/charleshross/soarin/wiki/Setup-VirtualBox-on-Windows-7)
-2. **[Databases (Optional)](/charleshross/soarin/wiki/Databases)**
- - [Setup MySQL Database](/charleshross/soarin/wiki/Setup-MySQL-Database)
- - [Setup Redis Database](/charleshross/soarin/wiki/Setup-Redis-Database)
-3. **[Web Software](/charleshross/soarin/wiki/Web-Software)**
- - [Setup NGINX Web Server](/charleshross/soarin/wiki/Setup-NGINX-Web-Server)
- - [Setup PHP for NGINX](/charleshross/soarin/wiki/Setup-PHP-for-NGINX)
-4. **[Web Extras](/charleshross/soarin/wiki/Web-Extras)**
- - [Setup PHP Redis Extension](/charleshross/soarin/wiki/Setup-PHP-Redis-Extension)
- - [Setup Node.js](/charleshross/soarin/wiki/Setup-NodeJS)
- - [Setup Grunt](/charleshross/soarin/wiki/Setup-Grunt)
- - [Setup PHP Stemming Extension](/charleshross/soarin/wiki/Setup-PHP-Stemming-Extension)
- - [Setup GraphicsMagick with PHP Extension](/charleshross/soarin/wiki/Setup-GraphicsMagick-with-PHP-Extension)
- - [Setup FFMPEG](/charleshross/soarin/wiki/Setup-FFMPEG)
-5. **[Soarin Setup](/charleshross/soarin/wiki/Soarin-Setup)**
+1. **[Server Environment](https://github.com/charleshross/soarin/wiki/Server-Environment)**
+ - [Setup VirtualBox on Windows 7](https://github.com/charleshross/soarin/wiki/Setup-VirtualBox-on-Windows-7)
+2. **[Databases (Optional)](https://github.com/charleshross/soarin/wiki/Databases)**
+ - [Setup MySQL Database](https://github.com/charleshross/soarin/wiki/Setup-MySQL-Database)
+ - [Setup Redis Database](https://github.com/charleshross/soarin/wiki/Setup-Redis-Database)
+3. **[Web Software](https://github.com/charleshross/soarin/wiki/Web-Software)**
+ - [Setup NGINX Web Server](https://github.com/charleshross/soarin/wiki/Setup-NGINX-Web-Server)
+ - [Setup PHP for NGINX](https://github.com/charleshross/soarin/wiki/Setup-PHP-for-NGINX)
+4. **[Web Extras](https://github.com/charleshross/soarin/wiki/Web-Extras)**
+ - [Setup PHP Redis Extension](https://github.com/charleshross/soarin/wiki/Setup-PHP-Redis-Extension)
+ - [Setup Node.js](https://github.com/charleshross/soarin/wiki/Setup-NodeJS)
+ - [Setup Grunt](https://github.com/charleshross/soarin/wiki/Setup-Grunt)
+ - [Setup PHP Stemming Extension](https://github.com/charleshross/soarin/wiki/Setup-PHP-Stemming-Extension)
+ - [Setup GraphicsMagick with PHP Extension](https://github.com/charleshross/soarin/wiki/Setup-GraphicsMagick-with-PHP-Extension)
+ - [Setup FFMPEG](https://github.com/charleshross/soarin/wiki/Setup-FFMPEG)
+5. **[Soarin Setup](https://github.com/charleshross/soarin/wiki/Soarin-Setup)**
 
 PHP Framework Dependencies
 -----------------------------
