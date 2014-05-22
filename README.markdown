@@ -13,16 +13,15 @@ Installation
 1. **[Server Environment](https://github.com/charleshross/soarin/wiki/Server-Environment)**
  - [Setup VirtualBox on Windows 7](https://github.com/charleshross/soarin/wiki/Setup-VirtualBox-on-Windows-7)
 2. **[Databases](https://github.com/charleshross/soarin/wiki/Databases)**
- - [Setup MySQL Database](https://github.com/charleshross/soarin/wiki/Setup-MySQL-Database)
+ - [Setup Percona (MySQL) Database](https://github.com/charleshross/soarin/wiki/Setup-Percona-Database)
  - [Setup Redis Database](https://github.com/charleshross/soarin/wiki/Setup-Redis-Database)
  - [Setup MongoDB Database](https://github.com/charleshross/soarin/wiki/Setup-MongoDB-Database)
 3. **[Web Software](https://github.com/charleshross/soarin/wiki/Web-Software)**
  - [Setup NGINX Web Server](https://github.com/charleshross/soarin/wiki/Setup-NGINX-Web-Server)
  - [Setup PHP for NGINX](https://github.com/charleshross/soarin/wiki/Setup-PHP-for-NGINX)
+ - [Setup Node.js](https://github.com/charleshross/soarin/wiki/Setup-NodeJS)
 4. **[Web Extras](https://github.com/charleshross/soarin/wiki/Web-Extras)**
  - [Setup PHP Redis Extension](https://github.com/charleshross/soarin/wiki/Setup-PHP-Redis-Extension)
- - [Setup Node.js](https://github.com/charleshross/soarin/wiki/Setup-NodeJS)
- - [Setup Grunt](https://github.com/charleshross/soarin/wiki/Setup-Grunt)
  - [Setup PHP Stemming Extension](https://github.com/charleshross/soarin/wiki/Setup-PHP-Stemming-Extension)
  - [Setup GraphicsMagick with PHP Extension](https://github.com/charleshross/soarin/wiki/Setup-GraphicsMagick-with-PHP-Extension)
  - [Setup FFMPEG](https://github.com/charleshross/soarin/wiki/Setup-FFMPEG)
