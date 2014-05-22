@@ -44,7 +44,6 @@ Optional (gives full features):
 * [PHP PDO extension with pdo-mysql and pdo-pgsql](http://www.php.net/manual/en/book.pdo.php)
 * [PHP cURL extension](http://php.net/manual/en/book.curl.php)
 * [MySQL v5.6.15+](http://dev.mysql.com/downloads/mysql/)
-* [PostgreSQL v9.3+](http://www.postgresql.org/)
 
 NGINXG Server Clause Setup
 -----------------------------
